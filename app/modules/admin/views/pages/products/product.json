@@ -1,0 +1,159 @@
+{
+	"id":927,
+	"name":"Test Bed",
+	"code":"ZZZ123",
+	"description":"description basic",
+	"dimension":"123546",
+	"sort_order":9999,
+	"is_enabled":"1",
+	"is_promo":0,
+	"is_custom":0,
+	"created_at":"-0001-11-30 00:00:00",
+	"updated_at":"2016-02-03 08:10:27",
+	"category_id":9,
+	"subcategory_id":10,
+
+	"category":{
+		"id":9,
+		"name":"Bedroom",
+		"slug":"bedroom",
+		"description":"",
+		"sort_order":9999,
+		"is_enabled":1,
+		"maincat_id":13,
+		"created_at":"2015-11-12 10:30:25",
+		"updated_at":"2015-11-12 10:30:25"
+	},
+
+	"subcategory":{
+		"id":10,
+		"name":"Bed Frames",
+		"slug":"bed-frames",
+		"description":"Bed Frames",
+		"is_enabled":1,
+		"sort_order":9999,
+		"category_id":9,
+		"created_at":"-0001-11-30 00:00:00",
+		"updated_at":"2015-11-14 12:51:32"
+	},
+
+	"prices":{
+		"id":35,
+		"normal":"1.00",
+		"promo":"2.00",
+		"project":"12.00",
+		"export":"21.00",
+		"product_id":927,
+		"promo_description":"description ",
+		"promo_note":"not",
+		"created_at":"2016-01-26 15:53:08",
+		"updated_at":"2016-02-03 04:44:28"
+	},
+
+	"relations":[
+		{
+			"id":794,
+			"name":"HAVANA DINING TABLE",
+			"code":"DT203",
+			"description":"Simple and elegant dining table. \r\nMade from recycled Teak wood. \r\nAvailable in various sizes. \r\nSuitable for homes, resorts as well as fine dining restaurants.",
+ 			"dimension":"Rectangle Tables :\r\n6 seater : 120cm L X 90cm W X 80cm H\r\n8 seater : 180cm L X 100cm W X 80cm H\r\n10 seater : 240cm L X 105cm W X 80cm H",
+			"sort_order":9999,
+			"is_enabled":"1",
+			"is_promo":0,
+			"is_custom":0,
+			"created_at":"2015-12-05 07:21:08",
+			"updated_at":"2016-01-30 10:37:52",
+			"category_id":12,
+			"subcategory_id":74,
+
+			"pivot":{
+				"product_id":927,
+				"also_id":794
+			}
+		},
+		{
+			"id":608,
+			"name":"AMALFI DINING TABLE",
+			"code":"HDS35",
+			"description":"Simple and elegant dining table. \r\nMade from premium Teak wood. \r\nAvailable in various sizes. \r\nSuitable for homes,
+			 resorts as well as fine dining restaurants.",
+ 			"dimension":"4 seater : 90cm L X 90cm W X 80cm H\r\n6 seater : 120cm L X 90cm W X 80cm H\r\n8 seater : 180cm L X 100cm W X 80cm H\r\n10 seater : 240cm L X 105cm W X 80cm H",
+			"sort_order":9999,
+			"is_enabled":"1",
+			"is_promo":1,
+			"is_custom":0,
+			"created_at":"2015-12-05 07:21:08",
+			"updated_at":"2016-01-30 10:38:02",
+			"category_id":12,
+			"subcategory_id":74,
+			"pivot":{
+				"product_id":927,
+				"also_id":608
+			}
+		},
+		{
+			"id":610,
+			"name":"AMALFI MARBLETOP TABLE",
+			"code":"HDS22",
+			"description":"Simple,
+			 practical and elegant table. \r\nThe frame is made with selected Teak wood. \r\nAvailable in various choices of marbles.",
+ 			"dimension":"4 seater : 90cm L X 90cm W X 80cm H\r\n6 seater : 120cm L X 100cm W X 80cm H\r\n8 seater : 180cm L X 100cm W X 80cm H",
+			"sort_order":9999,
+			"is_enabled":"1",
+			"is_promo":0,
+			"is_custom":0,
+			"created_at":"2015-12-05 07:21:08",
+			"updated_at":"2015-12-05 13:21:08",
+			"category_id":12,
+			"subcategory_id":74,
+			"pivot":{
+				"product_id":927,
+				"also_id":610
+			}
+		}
+	],
+
+	"relations":[
+		{"id":608,"name":"AMALFI DINING TABLE","code":"HDS35","description":"Simple and elegant dining table. \r\nMade from premium Teak wood. \r\nAvailable in various sizes. \r\nSuitable for homes, resorts as well as fine dining restaurants.","dimension":"4 seater : 90cm L X 90cm W X 80cm H\r\n6 seater : 120cm L X 90cm W X 80cm H\r\n8 seater : 180cm L X 100cm W X 80cm H\r\n10 seater : 240cm L X 105cm W X 80cm H","sort_order":9999,"is_enabled":"1","is_promo":1,"is_custom":0,"created_at":"2015-12-05 07:21:08","updated_at":"2016-02-18 08:53:14","category_id":12,"subcategory_id":74},
+		{"id":794,"name":"HAVANA DINING TABLE","code":"DT203","description":"Simple and elegant dining table. \r\nMade from recycled Teak wood. \r\nAvailable in various sizes. \r\nSuitable for homes, resorts as well as fine dining restaurants.","dimension":"Rectangle Tables :\r\n6 seater : 120cm L X 90cm W X 80cm H\r\n8 seater : 180cm L X 100cm W X 80cm H\r\n10 seater : 240cm L X 105cm W X 80cm H","sort_order":9999,"is_enabled":"1","is_promo":0,"is_custom":0,"created_at":"2015-12-05 07:21:08","updated_at":"2016-01-30 10:37:52","category_id":12,"subcategory_id":74}
+	],
+
+	"images":[
+		{
+			"id":3107,
+			"name":"test-bed-927-205.jpg",
+			"alt":"horestco image - bedroom ",
+			"is_primary":"0",
+			"sort_order":1,
+			"is_enabled":0,
+			"is_verified":0,
+			"product_id":927,
+			"created_at":"2016-01-23 09:58:39",
+			"updated_at":"2016-01-23 09:58:39"
+		},
+		{
+			"id":3103,
+			"name":"test-bed-927-501.jpg",
+			"alt":"test bed - Horestco furniture fdasfdsa",
+			"is_primary":"1",
+			"sort_order":2,
+			"is_enabled":0,
+			"is_verified":0,
+			"product_id":927,
+			"created_at":"2016-01-16 13:48:06",
+			"updated_at":"2016-01-16 13:48:06"
+		},
+		{
+			"id":3114,
+			"name":"test-bed-927-2236.jpg",
+			"alt":"test bed - Horestco furniture",
+			"is_primary":"0",
+			"sort_order":3,
+			"is_enabled":0,
+			"is_verified":0,
+			"product_id":927,
+			"created_at":"2016-02-02 09:26:39",
+			"updated_at":"2016-02-02 09:26:39"
+		}
+	]
+}

@@ -1,0 +1,299 @@
+.text-label{
+	color: #888;
+	vertical-align: top;
+}
+.text-hidden{
+	color: white !important;
+}
+.text-bold{
+	font-weight: bold;
+}
+.text-del{
+  text-decoration: line-through;
+  font-size: 11px;
+  font-weight: normal;
+}
+.text-promo{
+  color: red;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 120%;
+}
+
+/*
+ * VUEJS Transition
+ * /
+ * always present */
+.fade-transition {
+  transition: all .3s ease;
+  height: auto;
+  overflow: hidden;
+}
+
+/* .fade-enter defines the starting state for entering */
+/* .fade-leave defines the ending state for leaving */
+.fade-enter, .fade-leave {
+  height: 0;
+  opacity: 0;
+}
+
+/**
+ * 
+ */
+
+.tag{
+	width: 21.0cm;
+	height: 29.7cm;
+	border: 1px solid #ddd;
+	font-size: 14px;
+}
+
+.tag-logo{
+	text-align: center;
+	padding: 5px 0;
+	height: 50px;
+}
+.tag-logo img{
+	width: 100px;
+}
+.tag hr{
+	margin: 0;
+}
+.tag-item{
+	width: 7cm;
+	height: 14.5cm;
+	vertical-align: top;
+	overflow:hidden;
+	float:left;
+
+	padding: 20px;
+	border: 1px dashed #ddd;
+}
+.tag-heading{
+	font-size: 34pt;
+	font-weight: bold;
+}
+
+.tag-body{
+	font-size: 8pt;
+}
+
+.table.tag-description{
+	margin-bottom: 2px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+}
+
+.table.tag-description tr{
+	padding-top: 15px;
+}
+
+.table.tag-description td{
+	border: none;
+	padding: 15px;
+	padding-left: 0;
+}
+img.select-image{
+	border: 2px solid #f9f9f9;
+}
+img.select-image.active{
+	border-color: #565656;
+}
+
+/**
+ * NEW index.php
+ */
+
+.pricetag .tags{
+	width: 21.0cm;
+	height: 29.7cm;
+	font-size: 14px;
+}
+
+.print-area{
+	font-size: 12px;
+}
+
+.print-area hr{
+	margin: 0;
+}
+
+.print-area .tag-logo{
+	text-align: center;
+	padding: 5px 0;
+	height: 40px;
+	margin-top: -7px;
+}
+.print-area .tag-logo img{
+	width: 100px;
+}
+
+.print-area .tag-item{
+	width: 7cm;
+	height: 14.9cm;
+	vertical-align: top;
+	overflow:hidden;
+	float:left;
+
+	padding: 10px;
+	border: 1px dashed #ddd;
+}
+
+.print-area .tag-heading{
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.print-area .tag-body{
+	font-size: 10px;
+	margin-top: 10.5px;
+}
+
+/**
+ * NEW 3tag perpage index.php
+ */
+
+.beta.pricetag .tags{
+	width: 29.7cm;
+	height: 21.0cm;
+	font-size: 14px;
+}
+
+.beta.pricetag .add{
+	background: #ddd;
+	padding: 30px 15px;
+	margin-bottom: 30px;
+}
+
+.beta .print-area{
+	font-size: 12px;
+}
+
+.beta .print-area hr{
+	margin: 0;
+}
+
+.beta .print-area .tag-item{
+	width: 9.9cm;
+	height: 20.5cm;
+	vertical-align: top;
+	overflow:hidden;
+	float:left;
+
+	padding: 10px;
+	border: 1px dashed #ddd;
+}
+
+.beta .print-area .tag-logo{
+	text-align: center;
+	padding: 5px 0;
+	height: 40px;
+	margin-top: -7px;
+}
+.beta .print-area .tag-logo img{
+	width: 100px;
+}
+
+.beta .print-area .tag-heading{
+	font-size: 16px;
+	font-weight: bold;
+}
+.beta .print-area .tag-body,
+.beta .print-area .tag-footer{
+	font-size: 14px;
+	
+}
+
+.beta .print-area .tag-body{
+	margin-top: 10.5px;
+	margin-left: -5px; // sesuai dengan padding-left dari table > tr > td
+}
+
+.beta .print-area .tag-body table td{
+	padding: 2px 5px;
+}
+
+.beta .print-area .tag-image img{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.beta .print-area .tag-footer{
+	margin-top: 20px;
+	font-family: 'Carme', 'Arial', sans-serif;
+}
+
+
+
+/**
+ * NEW 3tag perpage index.php
+ */
+
+.tag6.pricetag .tags{
+	width: 21.0cm;
+	height: 29.7cm;
+	font-size: 14px;
+}
+
+.tag6.pricetag .add{
+	background: #f2f2f2;
+	padding: 30px 15px;
+	margin-bottom: 30px;
+}
+
+.tag6 .print-area{
+	font-size: 12px;
+}
+
+.tag6 .print-area hr{
+	margin: 0;
+}
+
+.tag6 .print-area .tag-item{
+	width: 7cm;
+	height: 14.5cm;
+	vertical-align: top;
+	overflow:hidden;
+	float:left;
+
+	padding: 10px;
+	border: 1px dashed #ddd;
+}
+
+.tag6 .print-area .tag-logo{
+	text-align: center;
+	padding: 5px 0;
+	height: 40px;
+	margin-top: -7px;
+}
+.tag6 .print-area .tag-logo img{
+	width: 100px;
+}
+
+.tag6 .print-area .tag-heading{
+	font-size: 16px;
+	font-weight: bold;
+}
+.tag6 .print-area .tag-body,
+.tag6 .print-area .tag-footer{
+	font-size: 12px;
+	
+}
+
+.tag6 .print-area .tag-body{
+	margin-top: 10.5px;
+	margin-left: -5px; // sesuai dengan padding-left dari table > tr > td
+}
+
+.tag6 .print-area .tag-body table td{
+	padding: 2px 5px;
+}
+
+.tag6 .print-area .tag-image img{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.tag6 .print-area .tag-footer{
+	margin-top: 10px;
+	font-family: 'Carme', 'Arial', sans-serif;
+}

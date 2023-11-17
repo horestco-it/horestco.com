@@ -1,0 +1,22 @@
+
+.hide-on-print{
+	display: none !important;
+}
+.show-on-print{
+	display: block !important;
+}
+
+.text-label{
+	color: #888;
+	vertical-align: top;
+}
+.text-hidden{
+	color: white !important;
+}
+.text-bold{
+	font-weight: bold;
+}
+
+.tags{
+	margin: -55px auto auto -12px;
+}

@@ -1,0 +1,80 @@
+.hide-on-print{
+	display: none !important;
+}
+.show-on-print{
+	display: block !important;
+}
+
+hr{
+	margin: 0;
+}
+/* header */
+header{
+}
+header nav{
+	position: static !important;
+	box-shadow: none;
+	padding: 0;
+	margin: 0;
+}
+.brand-logo{
+	display: block;
+	position: static;
+}
+.submenu{
+	display: none;
+}
+.http{
+	display: block !important;
+}
+.http li a{
+	padding: 0 10px;
+	font-size: 10px;
+}
+/* masonry */
+.row.grid
+{
+	height:auto !important;
+}
+.row.grid .grid-item
+{
+	position:relative !important;
+	display:block !important;
+	left:0 !important;
+	top:auto !important;
+	float:left;
+}
+.row.grid .grid-item.item{
+	width: 209.7px;
+	height: 220px;
+}
+.grid-item .card-panel.item-heading{
+	color: #039be5 !important;
+	padding: 5px 0; 
+	margin: 0;
+}
+.card{
+	box-shadow: none;
+	border: 1px solid #ddd;
+}
+.grid-item .card.lists ul{
+	margin-top: -10px !important;
+}
+.grid-item .price-label{
+	font-size: 12px;
+}
+/* product detail */
+#product-detail-container .section.price-label{
+	margin-bottom: -10px;
+	padding-top: 0;
+}
+#images-showcase{
+	margin-bottom: 4rem;
+}
+#related-items .item{
+	width: 200px !important;
+}
+/* footer */
+footer.page-footer{
+	margin-top: 5rem;
+}

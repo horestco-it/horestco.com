@@ -1,0 +1,25 @@
+{
+  "name": "horestco.com.my",
+  "version": "1.0.0",
+  "description": "- nav-beta - HRC_Controller - table `menus` - table `submenus`",
+  "main": "tailwind.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/utilities.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huiralb/horestco.com.my.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huiralb/horestco.com.my/issues"
+  },
+  "homepage": "https://github.com/huiralb/horestco.com.my#readme"
+}

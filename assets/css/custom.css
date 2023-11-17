@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Carme);
+nav .brand-logo{
+  position: relative;
+  margin-top: 0;
+  line-height: 30px;
+}
+.sub-brand-logo{
+  font-size: 15px;
+  line-height: 15px;
+  margin-top: -20px;
+  color: #444;
+  letter-spacing: 1px;
+}
+.carme{
+  font-family:'Carme', sans-serif;
+}
+.tm{
+  position: absolute;
+  font-size: 10px;
+  color: #999;
+  margin-left: 3px;
+  top: 7px;
+}
+ul.top-menu {
+  line-height: 36px;
+  margin-top: 27px;
+}
+.menu-pendek ul.top-menu {
+  margin-top: 7px;
+}
+nav .nav-wrapper i {
+  height: 36px;
+  line-height: 36px;
+  margin:0;
+}
+nav.secondary-nav .navbar .dropdown-content.dropdown-catalog{
+  background: #fff;
+  padding-top: 20px;
+  width: 600px;
+}
+nav.secondary-nav .navbar .dropdown-content.dropdown-catalog > li{
+  background: #fff;
+}
+nav.secondary-nav .navbar > li > a{
+  font-size: 16px;
+}
+ul.list-submenu > li{
+  min-height: 30px;
+}
+ul.list-submenu > li > a{
+  padding: 8px 16px;
+}
+nav .navbar {
+  margin: 0 auto;
+  display: table;
+  table-layout: auto;
+  float: none;
+  width: 100%;
+}
+nav .navbar>li {
+  display: table-cell;
+  float: none;
+  text-align: center;
+}
+.text-bold{
+  font-weight: bold;
+}
+h6{
+  font-size: 1.2rem;
+}
+
+.collapsible .collapsible-header .material-icons.add{
+  display: block;
+  opacity: 1;
+}
+.collapsible .collapsible-header .material-icons.remove{
+  display: none;
+  opacity: 0;
+}
+.collapsible .collapsible-header.active .material-icons.add{
+  display: none;
+  opacity: 0;
+}
+.collapsible .collapsible-header.active .material-icons.remove{
+  display: block;
+  opacity: 1;
+}
+
+.collapsible-body p{
+  line-height: 1.5rem;
+  padding: 0 0 20px;
+}
+
+.collapsible .collapsible-body ol > li{
+  list-style-type: auto;
+}
