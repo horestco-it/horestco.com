@@ -1,3 +1,7 @@
+<?php
+$contact = $this->config->item('indonesia');
+?>
+
 <section class="section center blue" id="contact">
   <div class="container contact-container">
     <div class="row">
@@ -7,9 +11,10 @@
     </div>
     <div class="row black-text">
       <div class="col s12">
-        HORESTCO INDUSTRIES (M) SDN. BHD (888188-K)<br>
-        <?=  $this->config->item('address') ?><br>
-        <i class="mdi-communication-phone"></i> +603-55697999<br>
+        <?=$contact['given-name']?><br>
+        <?=$contact['street-address']?>, <?=$contact['locality']?>, <?=$contact['region'] ?>, <?=$contact['postal-code']?>, <?=$contact['country-name']?>
+        <br>
+        <i class="mdi-communication-phone"></i> <?=$contact['phones'][0]?><br>
         <i class="mdi-communication-email"></i> info@horestco.com<br>
       </div>
       <div class="col s12">

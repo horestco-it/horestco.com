@@ -9,6 +9,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NDQHT5');</script>
 
+<?php
+$contact = $this->config->item('indonesia');
+?>
+
 <footer class="page-footer grey darken-4 section" id="footer">
 
     <div class="container">
@@ -18,9 +22,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <?php if( $this->uri->segment(1) == 'contact-furniture-manufacturer' ): ?>
           <?php else: ?>
           <h5>CONTACT</h5>
-          PT. HORESTCO<br>
-          <?php echo $this->config->item('address')?><br>
-          <i class="mdi-communication-phone"></i> +603-55697999<br>
+            <?=$contact['given-name'] ?><br/>
+            <?=$contact['street-address']?>, <?=$contact['locality']?>, <?=$contact['region'] ?>, <?=$contact['postal-code']?>, <?=$contact['country-name']?><br>
+          <i class="mdi-communication-phone"></i> <?=$contact['phones'][0]?><br>
           <i class="mdi-communication-email"></i>
            <!-- info@horestco.com -->
           <a href="mailto:info@horestco.com" style="color: #e0e0e0;"> info@horestco.com</a>
