@@ -90,7 +90,7 @@
                   <span class="price-normal"><del><?=$size->price->normal?></del></span> 
                   <?php endif ?>
                   <?php if ($size->price->promo): ?>
-                  <h5 class="price-promo red-text"><?=$currency?> <?=$size->price->promo?></h5>
+                  <h5 class="price-promo red-text"><?=$this->config->item('currency')?> <?=$size->price->promo?></h5>
                   <?php endif ?>
                 </li>
 

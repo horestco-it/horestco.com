@@ -9,6 +9,7 @@ $config['address'] = 'Jalan Sultan Hadlirin, Desa Langon RT 12 RW 05, Kecamatan 
 
 $config['theme'] = 'template/default/';
 $config['productsheet_pdf'] = 'files/productsheet/';
+$config['currency'] = 'USD';
 /*
 |--------------------------------------------------------------------------
 | Base Site URL

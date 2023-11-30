@@ -106,7 +106,7 @@ if (! function_exists('product_lists'))
 
 		$html = '';
 
-		$currency = 'MYR';
+		$currency = 'USD';
 
 
 		foreach ($data as $key => $product):
