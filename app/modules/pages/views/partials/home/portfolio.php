@@ -8,7 +8,7 @@
         </div>
       </div>
       <p>
-        Over the past six years since our foundation, we have furnished numerous private homes, hotels, resorts, restaurants, condominiums and other commercial spaces in over twenty countries. 
+        We are in business since 2010, we have furnished numerous private homes, hotels, resorts, restaurants, condominiums and other commercial spaces in over twenty countries. 
         To see some of the properties we have manufactured furniture for, please visit our <a href="/portfolio"> Portfolio </a> page.
       </p>
     </div>
