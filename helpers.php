@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use Illuminate\Support\Str;
+
 include 'config.php';
 
 
@@ -49,16 +52,6 @@ if (!function_exists('filter_outdoor'))
 	{
 		return $id == 41 ? 'outdoor' : $name;
 	}
-}
-
-if (!function_exists('str_slug'))
-{
-	function str_slug($value='')
-  {
-    $url = strtolower( str_replace(' ', '-', $value) );
-    
-    return str_replace(',', '', $url);
-  }
 }
 
 

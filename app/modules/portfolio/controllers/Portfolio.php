@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 /**
 * 
 */
@@ -22,7 +24,7 @@ class Portfolio extends HRC_Controller
 
   public function category($slug)
   {
-    $slug = str_slug(filter_var($slug, FILTER_SANITIZE_STRING));
+    $slug = Str::slug(filter_var($slug, FILTER_SANITIZE_STRING));
 
     $this->load->helper('image');
 

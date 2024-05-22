@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
 	include '../../../classes/Db.class.php';
 	include '../../../classes/DB.php';
 	include '../../../classes/Helper.php';
@@ -25,7 +28,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'addclient' ) {
 		'category'=> $_POST['category'],
 		'name'		=> $_POST['name'],
 		'address'	=> $_POST['location'],
-		'slug'		=> str_slug($_POST['name']),
+		'slug'		=> Str::slug($_POST['name']),
 		'scopes'	=> $_POST['scopes'],
 		'des'  		=> $_POST['description'],
 		'created_at' => \Carbon\Carbon::now('Asia/Jakarta'),
@@ -64,7 +67,7 @@ if ( isset($_GET['uploadpdf']) && $_GET['uploadpdf'] ) {
 
 	$page = $client->page()->first()->name;
 
-	$name = $page."_".str_slug($client->name)."_v".rand(100, 999).".$ext";
+	$name = $page."_".Str::slug($client->name)."_v".rand(100, 999).".$ext";
 
 	if( !empty($_FILES["pdf"]["tmp_name"]) && move_uploaded_file($_FILES["pdf"]["tmp_name"], $pdf_path.$name) )
 	{
@@ -93,7 +96,7 @@ if ( isset($_GET['upload']) && $_GET['upload'] ) {
 		$db->bind('pageId', $client['page_id']);
 		$page = $db->row(" SELECT * FROM pages WHERE id = :pageId ");
 		
-		$path = base_path()."assets/images/portfolio/".$helper->str_slug($page['name'])."/";
+		$path = base_path()."assets/images/portfolio/".Str::slug($page['name'])."/";
 
 		$img_allowed = array('png', 'jpg', 'gif','zip');
 		
@@ -102,8 +105,8 @@ if ( isset($_GET['upload']) && $_GET['upload'] ) {
 	    $ext = strtolower('.'.pathinfo($name, PATHINFO_EXTENSION));
 
 	    $imageCrumbs = array(
-	    	$helper->str_slug($client['name']),
-	    	$helper->str_slug($page['name']),
+	    	Str::slug($client['name']),
+	    	Str::slug($page['name']),
 	    	rand(100, 999)
 	    );
 

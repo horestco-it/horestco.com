@@ -36,7 +36,11 @@
 </head>
 <body>
 
-<?php $this->load->view('partials/nav.php') ?>
+<?php
+
+                    use Illuminate\Support\Str;
+
+ $this->load->view('partials/nav.php') ?>
 
 <div class="divider"></div>
 
@@ -63,7 +67,7 @@
           <tr data-id="<?=$product['rowid']?>">
             <td><?=image_thumb(img_url('furniture/'.$product['image']), 200, ['class'=>'responsive-img'])?></td>
             <td>
-              <a href="/furniture/<?=str_slug($product['name'])?>-<?=$product['code']?>" target="_blank">
+              <a href="/furniture/<?=Str::slug($product['name'])?>-<?=$product['code']?>" target="_blank">
                 <strong><?=ucwords(strtolower($product['name']))?></strong>
               </a>
               <br>

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 if(! function_exists('product_thumbnail'))
 {
 	function product_thumbnail($products)
@@ -41,7 +43,7 @@ if(! function_exists('product_thumbnail'))
 					// 			: $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['normal'].'</span>';
 				
 					$html .= "<div class=\"col s6 m3 item\">";
-					$html .= "<a href=\"".base_url()."furniture/".str_slug($product->name)."-".$product->id."\">";
+					$html .= "<a href=\"".base_url()."furniture/".Str::slug($product->name)."-".$product->id."\">";
 					$html .= "	<div class=\"card lists\">";
 					$html .= "		<div class=\"card-image\">";
 								
@@ -110,12 +112,12 @@ if (! function_exists('product_lists'))
 
 
 		foreach ($data as $key => $product):
-			// update str image to str_slug
+			// update str image to Str::slug
 			//update_to_lower($product->imageThumb['id'], $product->imageThumb['name']);
 			$grid = ($subid == 0 && $key == 0) ? 'grid-item grid-sizer' : 'grid-item';
 
 				$html .= '<div class="col s12 m4 l3 item '.$grid.'" data-id="image-'.$product->subcategory['id'].'">';
-					$html .= '<a href="'.base_url().'furniture/'.str_slug($product->name).'-'.$product->id.'">';
+					$html .= '<a href="'.base_url().'furniture/'.Str::slug($product->name).'-'.$product->id.'">';
 						$html .= '<div class="card lists">';
 							$html .= '<div class="card-image">';
 
@@ -149,7 +151,7 @@ if (! function_exists('product_lists'))
 
 							// if(is_array($except) && in_array($product->category['id'], $except['category_id'])  ):
 
-								$label = '<span class="grey-text hide-on-small-only" style="line-height:26px"><i class="mdi-action-label small grey-text text-darken-1 left hide-on-print"></i> </span><span class="gap gap-5 hide-on-small-only hide-on-print"></span>';
+								$label = '<span class="grey-text hide-on-small-only" style="line-height:26px"><i class="mdi-action-label small grey-text text-darken-1 left hide-on-print"></i> </span><span class="gap-5 gap hide-on-small-only hide-on-print"></span>';
 								$price = ($product->sizes[0]->prices['normal'] == '' || $product->sizes[0]->prices['normal'] == 0.00) ? '' : $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['normal'].'</span>';
 								$html .= '<li>'.$product->sizes[0]->prices['promo'] == '' || $product->sizes[0]->prices['promo'] == 0.00 ? $price : $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['promo'].'</span>';
 

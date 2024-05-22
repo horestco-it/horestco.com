@@ -3,6 +3,7 @@
 // if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 use \Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -31,7 +32,7 @@ class Product extends Model
 
 	public function getRouteAttribute()
 	{
-		return "/furniture/".str_slug($this->name)."-".$this->id;
+		return "/furniture/".Str::slug($this->name)."-".$this->id;
 	}
 
 	public function getAdminRouteAttribute()

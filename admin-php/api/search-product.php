@@ -89,6 +89,8 @@ else:
 
 <?php endif; endif; ?>
 
+use Illuminate\Support\Facades\DB;
+
 <script>
   $('.set-priority').change(function(e){
     var thisVal = $(this).val();

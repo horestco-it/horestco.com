@@ -1,5 +1,8 @@
 <?php
-  ini_set("display_errors", 1);
+
+use Illuminate\Support\Str;
+
+  ini_set("display_errors", 'On');
   require 'api/check_session.php';
   require '../classes/DB.php';
   require '../classes/Db.class.php';
@@ -118,9 +121,9 @@ if ( isset($_GET['action']) && $_GET['action'] == 'edit' )
 
 
     $filename = array(
-      str_slug($product->category['name']),
+      Str::slug($product->category['name']),
       'furniture',
-      str_slug($product->name),
+      Str::slug($product->name),
       $product->id
     );
 
@@ -128,7 +131,7 @@ if ( isset($_GET['action']) && $_GET['action'] == 'edit' )
 
     $backup = [
       $product->id,
-      strtoupper(str_slug($product->name)),
+      strtoupper(Str::slug($product->name)),
       'backup',
       $date->toDateString(),
     ];

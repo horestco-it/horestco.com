@@ -1,4 +1,8 @@
-<?php $this->load->view( config_item('theme').'header', ['page'=>$this->uri->segment(1)."/".$this->uri->segment(2)] ) ?>
+<?php
+
+use Illuminate\Support\Str;
+
+ $this->load->view( config_item('theme').'header', ['page'=>$this->uri->segment(1)."/".$this->uri->segment(2)] ) ?>
 
   <meta name="keywords" content="horestco client, <?=$client->scopes?>, <?=$client->name?>, <?=$client->location?>"/>
   <meta name="description" content="horestcto client, <?=$client->description?>" />
@@ -66,7 +70,7 @@
             echo image_thumb(product_img_url($image->name), 50, $attr);
             /*
             */ ?>
-            <a href="<?=base_url().'furniture/'.str_slug($image->product['name']).'-'.$image->product['id']?>">
+            <a href="<?=base_url().'furniture/'.Str::slug($image->product['name']).'-'.$image->product['id']?>">
               <span><?=ucwords(strtolower($image->product['name']))?></span>
             </a>
           </li>
@@ -93,7 +97,7 @@
       <div id="slide" class="owl-carousel" data-slider-id="1">
         <?php foreach ($client->images as $key => $image): ?>
           <div class="item" data-hash="<?=$image->id?>">
-            <img src="<?=base_url().img_url().'portfolio/'.str_slug($client->page["name"]).'/'.strtolower($image->name)?>"
+            <img src="<?=base_url().img_url().'portfolio/'.Str::slug($client->page["name"]).'/'.strtolower($image->name)?>"
              title ="<?=$title?>"
              alt="<?=$alt?>">
           </div>
@@ -108,7 +112,7 @@
           <?php foreach ($client->images as $key => $image): ?>
             <div class="col m2 owl-thumb-item">
               <?php
-                $image = img_url().'portfolio/'.str_slug($client->page["name"]).'/'.strtolower($image->name);
+                $image = img_url().'portfolio/'.Str::slug($client->page["name"]).'/'.strtolower($image->name);
                 $attr = [
                   'alt' => $altThumb,
                   'title' => $titleThumb,

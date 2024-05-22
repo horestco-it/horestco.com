@@ -1,5 +1,9 @@
 <div class="col-sm-12">
-<?php foreach ($materialLists as $key => $cat): ?>
+<?php
+
+use Illuminate\Support\Str;
+
+ foreach ($materialLists as $key => $cat): ?>
 	<div class="row">
 		<h2 id="<?=$cat->name?>">.::<?=ucwords($cat->name)?>::.</h2>
 		<hr>
@@ -26,7 +30,7 @@
 		      	<ul class="list-inline">
 		      	<?php
 		      		foreach ($sub->materials as $im => $material):
-		      		$image = img_path('material/'.$material->id.'-'.$helper->str_slug($material->name).'.jpg');
+		      		$image = img_path('material/'.$material->id.'-'.Str::slug($material->name).'.jpg');
 		      		$src = file_exists(base_path($image)) ? base_url($image) : base_url(img_path('not-available.jpg'));
 		      	?>
 		      		<li class="thumbnail item" data-id="<?=$material->id?>">

@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use Illuminate\Support\Str;
+
 require_once('Db.class.php');
 class Helper extends Db
 
@@ -112,7 +115,7 @@ class Helper extends Db
 
   public function str_slug($value='')
   {
-    return $this->url_slug($value);
+    return Str::slug($value);
   }
 
 

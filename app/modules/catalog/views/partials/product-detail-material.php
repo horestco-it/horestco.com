@@ -1,5 +1,8 @@
 <ul class="collapsible z-depth-0" data-collapsible="accordion">
 	<?php
+
+use Illuminate\Support\Str;
+
 		foreach ($subcategories as $key => $sub):
 			if( in_array($sub->id, $materials['subcategory_id']) ):
 	?>
@@ -30,7 +33,7 @@
 													class="" 
 													data-original="<?=base_url().product_img_url($material->images->count() > 0 ? $material->images[0]->name : '' )?>">
 												<div class="image">
-													<img class="z-depth-1 responsive-img" width="50" src="<?=base_url().img_url('material/'.$material['id'].'-'.str_slug($material['name']).'.jpg')?>" alt="<?=$material->name?>">
+													<img class="z-depth-1 responsive-img" width="50" src="<?=base_url().img_url('material/'.$material['id'].'-'.Str::slug($material['name']).'.jpg')?>" alt="<?=$material->name?>">
 												</div>
 												<div class="caption center">
 														<span class="grey-text">Stock: </span> 

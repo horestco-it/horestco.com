@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
 	function is_active_material($allMaterial, $hasManyMaterial){
 		foreach($allMaterial as $category){
 			if( in_array($category->id, $hasManyMaterial) )
@@ -36,7 +39,7 @@
 				<?php foreach ($Material['required'] as $key => $category): ?>
 					<?php if (in_array($category->id, $materials['category_id'])): ?>
 						
-					<div class="section select-material <?=str_slug($category->name)?>">
+					<div class="section select-material <?=Str::slug($category->name)?>">
 						<label class="orange-text"><?=ucwords($category->name)?>:</label>
 						<?php $this->load->view('product-detail-material', 
 							[

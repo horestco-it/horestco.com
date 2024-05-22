@@ -1,4 +1,8 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+use Illuminate\Support\Str;
+
+ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require_once 'Base.php';
 
@@ -25,7 +29,7 @@ class Upload extends Base{
         echo '{"status":"error"}';
         exit;
       }
-      $file = str_slug($product->name).'-'.$product->id.'-'.rand(100, 9999).'.'.$extension;
+      $file = Str::slug($product->name).'-'.$product->id.'-'.rand(100, 9999).'.'.$extension;
       if(move_uploaded_file($_FILES['files']['tmp_name'], 'files/'.$file)){
         $data = ['status'=>'success', 'file'=>$file];
         print_r(json_encode($data));

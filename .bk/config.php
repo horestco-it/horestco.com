@@ -1,6 +1,9 @@
 <?php 
 // include 'classes/Helper.php';
 	// param
+
+use Illuminate\Support\Str;
+
 if(isset($_GET['action'])){
 	define("GET_ACTION", $_GET['action']);
 }
@@ -176,9 +179,9 @@ if (!function_exists('upload_product_image'))
     $product = Product::find($setting['product_id']);
 
 		$filename = array(
-	    str_slug($product->category['name']),
+	    Str::slug($product->category['name']),
 	    'furniture',
-	    str_slug($product->name),
+	    Str::slug($product->name),
 	    $product->id
 	  );
 	  

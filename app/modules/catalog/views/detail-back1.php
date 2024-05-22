@@ -6,7 +6,11 @@
   <meta name="author" content="Horestco Sdn. Bhd. - Malaysia" />
   <meta name="robots" content="index, follow" />
 
-	<?php $this->load->view('partials/meta-and-assets')?>
+	<?php
+
+                                    use Illuminate\Support\Str;
+
+ $this->load->view('partials/meta-and-assets')?>
 
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="<?=style_url('owl.carousel.css')?>">
@@ -177,7 +181,7 @@
 			<div class="row">
 				<?php foreach($product->relations as $key => $product): ?>
 						<div class="col s6 m3 l6 item">
-							<a href="<?=base_url('furniture/'.str_slug($product->name).'-'.$product->id)?>">
+							<a href="<?=base_url('furniture/'.Str::slug($product->name).'-'.$product->id)?>">
 								<div class="card">
 									<?php foreach($product->images as $image): ?>
 										<?php if ($image->is_primary): ?>

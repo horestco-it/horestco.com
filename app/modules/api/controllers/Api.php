@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 use Horestco\My\Model;
+use Illuminate\Support\Str;
 
 class Api extends HRC_Controller {
 
@@ -85,7 +86,7 @@ class Api extends HRC_Controller {
 
 		$product = Product::findOrFail($id);
 
-		$product->slug = str_slug($product->name).'-'.$product->id;
+		$product->slug = Str::slug($product->name).'-'.$product->id;
 
 		echo $product->toJson();
 	}

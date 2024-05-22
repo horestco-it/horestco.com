@@ -1,4 +1,8 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+use Illuminate\Support\Str;
+
+ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require_once 'Base.php';
 
@@ -245,7 +249,7 @@ class Catalog extends Base {
 	    	$errors[][$index] = "$file is too large, min 200kb";
     	}
     	else{
-  			$filename = str_slug($product->name)."-{$product->id}-".rand(1000, 9999).".$ext";
+  			$filename = Str::slug($product->name)."-{$product->id}-".rand(1000, 9999).".$ext";
   			// upload file
   			switch ($this->auth('type')) {
   				case 'U':

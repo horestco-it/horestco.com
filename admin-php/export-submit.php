@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -90,7 +93,7 @@ if( count($products)){
 			$product->code,
 			strtoupper($product->name),
 			(int)$product->price,
-			str_slug($product->category->name) .','. str_slug($product->subcategory->name),
+			Str::slug($product->category->name) .','. Str::slug($product->subcategory->name),
 			$product->category->name .','. $product->category->name .'>'. $product->subcategory->name,
 			$cross,
 			$upsells,
@@ -105,7 +108,7 @@ if( count($products)){
 	// print_r($products->toArray());
 	// echo "</br>";
 	
-	$filename = 'export-'.str_slug($products[0]->category->name).'--'.str_slug($products[0]->subcategory->name).'.csv';
+	$filename = 'export-'.Str::slug($products[0]->category->name).'--'.Str::slug($products[0]->subcategory->name).'.csv';
 	exportCsv($data, $header, $filename, ';');
 }
 

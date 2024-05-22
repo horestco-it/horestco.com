@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 /**
  * Function Name
  *
@@ -141,7 +143,7 @@ if (! function_exists('file_to_lower'))
     foreach ($files as $file) {
       $ext = '.'.strtolower(pathinfo($file, PATHINFO_EXTENSION ));
       $newfile = explode('.', $file);
-      $newfile = str_slug($newfile[0]).$ext;
+      $newfile = Str::slug($newfile[0]).$ext;
       $newfiles[] = $newfile;
       // echo "$newfile <br>";
       rename($path.$file, $path.$newfile);
@@ -177,7 +179,7 @@ if (! function_exists('update_to_lower'))
 
     $image = Image::find($id);
 
-    $image->name = str_slug($filename[0]).$ext;
+    $image->name = Str::slug($filename[0]).$ext;
 
     return $image->save();
 

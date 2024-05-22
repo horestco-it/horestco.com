@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 ini_set('display_errors', 1);
 require 'api/check_session.php';
 include '../config.php';
@@ -61,7 +63,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit')
       // upload image
       $config = [
         'path'     => base_path(img_path('material/')),
-        'filename' => str_slug("$material->id-$material->name"),
+        'filename' => Str::slug("$material->id-$material->name"),
       ];
       if( upload_image($_FILES['image'], $config) )
       {
@@ -196,7 +198,7 @@ if(
     $id = $_POST['id'];
 
     $material = Material::find($id);
-    $image = img_path('material/').$material->id."-".$helper->str_slug($material->name).".jpg";
+    $image = img_path('material/').$material->id."-".$helper->Str::slug($material->name).".jpg";
     $delete = $material->delete();
     if( $delete && file_exists($image = base_path($image)) )
     {

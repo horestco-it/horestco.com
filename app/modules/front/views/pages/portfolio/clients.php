@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php get_meta($this->uri->segment(1)."/".$this->uri->segment(2)) ?>
+  <?php
+
+use Illuminate\Support\Str;
+
+ get_meta($this->uri->segment(1)."/".$this->uri->segment(2)) ?>
 
   <?php $this->load->view('partials/meta-and-assets') ?>
   <style>
@@ -65,11 +69,11 @@ $groups = [
 <div class="divider"></div>
 
 <section class="container" id="portfolio-list-container">
-  <div class="row grid" id="grid">
+  <div class="grid row" id="grid">
 
     <div class="col s12 m8 l6 grid-item">
       <div class="card-panel <?=$theme[$portfolio->name]?> client">
-        <h3 class="client-title"><?=strtoupper($portfolio->name)?> <span class="gap gap-5"></span> FURNISHED</h3>
+        <h3 class="client-title"><?=strtoupper($portfolio->name)?> <span class="gap-5 gap"></span> FURNISHED</h3>
         <div class="client-content">
         	<?=$portfolio->body?>
         </div>
@@ -103,7 +107,7 @@ $groups = [
           $html  = "<div class=\" $class \" data-client=\"$client->id\">";
             $html .= "<a href=\"/client/$client->slug\">";
               $html .= "<div class=\"card\"><div class=\"card-image\">";
-                    $image = img_url().'portfolio/'.str_slug($portfolio->name).'/'.strtolower($image->name);
+                    $image = img_url().'portfolio/'.Str::slug($portfolio->name).'/'.strtolower($image->name);
                     $html .= image_thumb($image, 580);
                   $html .= "<div class=\"card-title\">".ucwords(strtolower($client->name))."</div>";
                 $html .= "</div>";

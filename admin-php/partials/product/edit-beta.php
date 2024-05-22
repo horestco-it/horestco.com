@@ -1,6 +1,10 @@
-<?php if ( $product ): ?>
+<?php
+
+use Illuminate\Support\Str;
+
+ if ( $product ): ?>
 <h3>Edit Product 
-  <a href="<?=base_url('furniture/'.str_slug($product->name).'-'.$product->id)?>" target="_blank" title="View Online">
+  <a href="<?=base_url('furniture/'.Str::slug($product->name).'-'.$product->id)?>" target="_blank" title="View Online">
     <small><span class="glyphicon glyphicon-eye-open"></span></small>
   </a>
 </h3>
@@ -608,7 +612,7 @@
 
 <?php else: ?>
 
-  <p class="text-danger text-center">
+  <p class="text-center text-danger">
 
     <span>No Product Record!</span>
 

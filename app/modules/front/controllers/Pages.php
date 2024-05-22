@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 class Pages extends HRC_Controller {
 
   protected $data = array();
@@ -39,7 +41,7 @@ class Pages extends HRC_Controller {
 
   public function portfolio($slug = 'portfolio')
   {
-    $slug = str_slug(filter_var($slug, FILTER_SANITIZE_STRING));
+    $slug = Str::slug(filter_var($slug, FILTER_SANITIZE_STRING));
 
     $data['page'] = 'portfolio';
 

@@ -1,6 +1,9 @@
 <?php 
 // include 'classes/Helper.php';
 	// param
+
+use Illuminate\Support\Str;
+
 if(isset($_GET['action'])){
 	define("GET_ACTION", $_GET['action']);
 }
@@ -23,10 +26,12 @@ if (isset($_POST['submit'])) {
 if (isset($_GET['lang'])) {
 	define('LANG', $_GET['lang']);
 }
-
+// echo "<pre>";
+// print_r($_SERVER);
+// echo "</pre>";
 define("THIS_FILE", $_SERVER['PHP_SELF']);
 define('BASE_DIR', dirname(__FILE__));
-define('PROTOCOL', $_SERVER['SERVER_NAME'] == 'localhost' ? 'http':'https');
+define('PROTOCOL', $_SERVER['SERVER_NAME'] == 'horestco.com' ? 'https':'http');
 define('BASE_URL', PROTOCOL."://$_SERVER[HTTP_HOST]");
 
 if(!function_exists('base_url'))
@@ -176,9 +181,9 @@ if (!function_exists('upload_product_image'))
     $product = Product::find($setting['product_id']);
 
 		$filename = array(
-	    str_slug($product->category['name']),
+	    Str::slug($product->category['name']),
 	    'furniture',
-	    str_slug($product->name),
+	    Str::slug($product->name),
 	    $product->id
 	  );
 	  

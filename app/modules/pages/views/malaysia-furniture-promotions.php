@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 
-  <?php get_meta($page) ?>
+  <?php
+
+use Illuminate\Support\Str;
+
+ get_meta($page) ?>
 
   <?php $this->load->view('partials/meta-and-assets') ?>
   <style>
@@ -70,7 +74,7 @@
             <?php foreach ($size->product->images as $key => $image): ?>
               <?php if ($image->is_primary): ?>
                 <div class="card-image">
-                  <a href="<?=base_url('furniture/'.str_slug($size->product->name).'-'.$size->product->id)?>" target="_blank">
+                  <a href="<?=base_url('furniture/'.Str::slug($size->product->name).'-'.$size->product->id)?>" target="_blank">
                     <?php echo image_thumb(product_img_url($image->name), 300); ?>
                   </a>
                 </div>

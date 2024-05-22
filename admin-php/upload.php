@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
 ini_set('display_errors', 1);
 
 require 'api/check_session.php';
@@ -254,7 +257,7 @@ $(document).ready(function(){
 											<ul>
 												<?php foreach ($sub->materials as $key => $material): ?>
 												<?php
-													$image = $material->id.'-'.$helper->str_slug($material->name).'.jpg';
+													$image = $material->id.'-'.Str::slug($material->name).'.jpg';
 													$relative = 'material/';
 													$isOpacity = !in_array($material->id, $unique['ids']) ? 'inactive': '';
 												?>

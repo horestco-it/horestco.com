@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
   ini_set("display_errors", 1);
   require 'api/check_session.php';
 
@@ -143,9 +146,9 @@ if ( isset($_GET['action']) && $_GET['action'] == 'edit' )
     }
 
     $filename = array(
-      str_slug($product->category['name']),
+      Str::slug($product->category['name']),
       'furniture',
-      str_slug($product->name),
+      Str::slug($product->name),
       $product->id
     );
 

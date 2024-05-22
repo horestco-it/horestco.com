@@ -1,4 +1,6 @@
 <?php
+
+use Illuminate\Support\Str;
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 
@@ -103,7 +105,7 @@ if (! function_exists('active_page'))
 {
 	function active_page($current, $link, $cssClass = ' active')
 	{
-		if($current == str_slug($link)) echo $cssClass;
+		if($current == Str::slug($link)) echo $cssClass;
 		return false;
 	}
 }
@@ -473,4 +475,19 @@ if(!function_exists('getGeoIp'))
         }
     }
     
+}
+
+
+if(!function_exists('str_slug'))
+{
+  function str_slug($value) {
+    return Str::slug($value);
+  }
+}
+
+if(!function_exists('str_plural'))
+{
+  function str_plural($value, $count) {
+    return Str::plural($value, $count);
+  }
 }

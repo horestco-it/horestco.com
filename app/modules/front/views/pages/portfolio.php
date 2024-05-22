@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <?php get_meta($page) ?>
+  <?php
+
+use Illuminate\Support\Str;
+
+ get_meta($page) ?>
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -48,7 +52,7 @@
   </div>
 </section>
 
-<section class="section container">
+<section class="container section">
   <div class="row">
 
   	<div class="col s12 center">
@@ -62,7 +66,7 @@
   		<ol>
   			<?php foreach ($portfolio as $key => $porto): ?>
   				<?php if ($porto->name != 'portfolio'): ?>
-  				<li> <a href="<?=base_url('client/'.str_slug($porto->slug))?>"><?=$porto->name?></a></li>
+  				<li> <a href="<?=base_url('client/'.Str::slug($porto->slug))?>"><?=$porto->name?></a></li>
   				<?php endif ?>
   			<?php endforeach ?>
   		</ol>

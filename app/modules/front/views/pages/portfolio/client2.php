@@ -42,7 +42,11 @@
 </head>
 <body>
 
-<?php $this->load->view('partials/nav') ?>
+<?php
+
+                    use Illuminate\Support\Str;
+
+ $this->load->view('partials/nav') ?>
 
 <nav class="top-nav transparent hide-on-small-only">
   <div class="container nav-wrapper">
@@ -82,7 +86,7 @@
             echo image_thumb(img_url().'products/'.$image->name, 50, $attr);
             /*
             */ ?>
-            <a href="<?=base_url().'furniture/'.str_slug($image->product['name']).'-'.$image->product['code']?>">
+            <a href="<?=base_url().'furniture/'.Str::slug($image->product['name']).'-'.$image->product['code']?>">
               <span><?=ucwords(strtolower($image->product['name']))?></span>
             </a>
           </li>
@@ -94,7 +98,7 @@
       <div id="slide" class="owl-carousel" data-slider-id="1">
         <?php foreach ($client->images as $key => $image): ?>
           <div class="item" data-hash="<?=$image->id?>">
-            <img src="<?=base_url().img_url().'portfolio/'.str_slug($client->page["name"]).'/'.strtolower($image->name)?>"
+            <img src="<?=base_url().img_url().'portfolio/'.Str::slug($client->page["name"]).'/'.strtolower($image->name)?>"
              title ="<?=$title?>"
              alt="<?=$alt?>">
           </div>
@@ -109,7 +113,7 @@
           <?php foreach ($client->images as $key => $image): ?>
             <div class="col m2 owl-thumb-item">
               <?php
-                $image = img_url().'portfolio/'.str_slug($client->page["name"]).'/'.strtolower($image->name);
+                $image = img_url().'portfolio/'.Str::slug($client->page["name"]).'/'.strtolower($image->name);
                 $attr = [
                   'alt' => $altThumb,
                   'title' => $titleThumb,

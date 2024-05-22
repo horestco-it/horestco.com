@@ -1,4 +1,8 @@
-<?php $this->load->view( config_item('theme').'header') ?>
+<?php
+
+use Illuminate\Support\Str;
+
+ $this->load->view( config_item('theme').'header') ?>
   <style>
 
   @media only screen and (max-width: 992px){
@@ -55,8 +59,8 @@
           <tr data-id="<?=$product['rowid']?>">
             <td><?=image_thumb(img_url('furniture/'.$product['image']), 200, ['class'=>'responsive-img'])?></td>
             <td>
-              <!-- <a href="/furniture/<?=str_slug($product['name'])?>-<?=$product['code']?>" target="_blank"> -->
-              <a href="/furniture/<?=str_slug($product['name'])?>-<?=$product['id']?>" target="_blank">
+              <!-- <a href="/furniture/<?=Str::slug($product['name'])?>-<?=$product['code']?>" target="_blank"> -->
+              <a href="/furniture/<?=Str::slug($product['name'])?>-<?=$product['id']?>" target="_blank">
                 <strong><?=ucwords(strtolower($product['name']))?></strong>
               </a>
               <br>

@@ -5,8 +5,7 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
 use Horestco\My\Model as Model;
-
-
+use Illuminate\Support\Str;
 
 class Customer extends HRC_Controller
 
@@ -197,7 +196,7 @@ class Customer extends HRC_Controller
 
 		}
 
-		return redirect('/customer/profile/'.str_slug($customer->name));
+		return redirect('/customer/profile/'.Str::slug($customer->name));
 
 	}
 
@@ -219,7 +218,7 @@ class Customer extends HRC_Controller
 	$this->session->set_flashdata('message','<span class="red-text">reset password canceled</span> ');
 		}
 		
-		return redirect('/customer/profile/'.str_slug($customer->name));
+		return redirect('/customer/profile/'.Str::slug($customer->name));
 
 	}
 
@@ -360,7 +359,7 @@ class Customer extends HRC_Controller
 
 
 			// redirect to profile
-			return redirect('/customer/profile/'.str_slug($request['name']));
+			return redirect('/customer/profile/'.Str::slug($request['name']));
 
 		}
 

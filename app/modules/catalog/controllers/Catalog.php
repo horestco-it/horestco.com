@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class Catalog extends HRC_Controller {
 
@@ -46,12 +47,12 @@ class Catalog extends HRC_Controller {
 			{
 				show_404();
 			}
-			redirect('/'.$this->uri->segment(1).'/'.str_slug($product->name).'-'.$product->id);
+			redirect('/'.$this->uri->segment(1).'/'.Str::slug($product->name).'-'.$product->id);
 		}
 
-		if(str_slug($product->name) != $name || (string)$product->id != $id)
+		if(Str::slug($product->name) != $name || (string)$product->id != $id)
 		{
-			redirect('/'.$this->uri->segment(1).'/'.str_slug($product->name).'-'.$product->id);
+			redirect('/'.$this->uri->segment(1).'/'.Str::slug($product->name).'-'.$product->id);
 		}
 		// end sync url /////////////////////////////////////////////////////////////////////
 

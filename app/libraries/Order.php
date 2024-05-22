@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 class Order {
 
 	/**
@@ -36,7 +38,7 @@ class Order {
 		$names = [];
 		foreach($items as $key => $item)
 		{
-			$names[$key] = str_slug($item['name']);
+			$names[$key] = Str::slug($item['name']);
 		}
 		return implode(' ', $names);
 

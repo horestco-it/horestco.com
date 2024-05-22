@@ -3,8 +3,7 @@
 
 
 use Horestco\My\Model as Model;
-
-
+use Illuminate\Support\Str;
 
 class Email extends HRC_Controller
 
@@ -112,7 +111,7 @@ class Email extends HRC_Controller
 
 
 
-		return redirect('/customer/profile/'.str_slug($verify->customer->name));
+		return redirect('/customer/profile/'.Str::slug($verify->customer->name));
 
 
 
@@ -159,7 +158,7 @@ class Email extends HRC_Controller
 			$this->session->set_flashdata('message', '<span class="red-text">reset is failed.</span>');
 
 		}
-		return redirect('/customer/login/'.str_slug($verify->customer->name));
+		return redirect('/customer/login/'.Str::slug($verify->customer->name));
 	}
 
 }

@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 require 'Base.php';
+
+use Illuminate\Support\Str;
 use NilPortugues\Sitemap\Sitemap as SitemapService;
 use NilPortugues\Sitemap\Item\Url\UrlItem;
 use NilPortugues\Sitemap\SitemapException;
@@ -56,7 +58,7 @@ class Sitemap extends Base {
 		    foreach ($this->getProducts() as $key => $product) {
 					$domain = 'http://horestco.com.my/furniture/';
 		    	$priority = '0.8';
-			    $item = new UrlItem($domain.str_slug($product->name.'-'.$product->id));
+			    $item = new UrlItem($domain.Str::slug($product->name.'-'.$product->id));
 			    $item->setPriority($priority); //Optional
 			    $item->setChangeFreq('weekly'); //Optional
 			    $sitemap->add($item);
@@ -101,7 +103,7 @@ class Sitemap extends Base {
 			{
 				$current = FCPATH.'sitemap.xml';
 				// backup
-				rename($current, FCPATH.'sitemaps/'.str_slug($this->dateNow()).'.xml');
+				rename($current, FCPATH.'sitemaps/'.Str::slug($this->dateNow()).'.xml');
 
 				if( rename($file, $current) )
 				{

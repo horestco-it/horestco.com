@@ -51,16 +51,6 @@ if (!function_exists('filter_outdoor'))
 	}
 }
 
-if (!function_exists('str_slug'))
-{
-	function str_slug($value='')
-  {
-    $url = strtolower( str_replace(' ', '-', $value) );
-    
-    return str_replace(',', '', $url);
-  }
-}
-
 
 if (!function_exists('printr'))
 {

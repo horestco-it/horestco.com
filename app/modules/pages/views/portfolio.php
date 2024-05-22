@@ -1,4 +1,8 @@
-<?php $this->load->view( config_item('theme').'header' ) ?>
+<?php
+
+use Illuminate\Support\Str;
+
+ $this->load->view( config_item('theme').'header' ) ?>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,7 +38,7 @@
   </div>
 </section>
 
-<section class="section container">
+<section class="container section">
   <div class="row">
 
   	<div class="col s12 center">
@@ -48,7 +52,7 @@
   		<ol>
   			<?php foreach ($portfolio as $key => $porto): ?>
   				<?php if ($porto->name != 'portfolio'): ?>
-  				<li> <a href="<?=base_url('client/'.str_slug($porto->slug))?>"><?=$porto->name?></a></li>
+  				<li> <a href="<?=base_url('client/'.Str::slug($porto->slug))?>"><?=$porto->name?></a></li>
   				<?php endif ?>
   			<?php endforeach ?>
         <li><a href="<?=base_url('portfolio/restaurant-furniture')?>" class="grey-text">More...</a></li>

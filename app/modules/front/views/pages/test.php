@@ -1,6 +1,9 @@
 <?php
 // backup sitemap.xml
-$backup = FCPATH.'sitemap-copy-'.str_slug(\Carbon\Carbon::now('Asia/Jakarta')).'.xml';
+
+use Illuminate\Support\Str;
+
+$backup = FCPATH.'sitemap-copy-'.Str::slug(\Carbon\Carbon::now('Asia/Jakarta')).'.xml';
 $file = FCPATH.'sitemap.xml';
 // if(!copy($file, $backup)) return false;
 

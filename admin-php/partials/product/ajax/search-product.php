@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 require '../../../api/check_session.php';
 require '../../../../classes/Helper.php';
 require '../../../../classes/DB.php';
@@ -34,7 +36,7 @@ else:
 
 ?>
 
-<p>Total : <strong><?=count($prod)?></strong> <?=str_plural('product', count($prod))?></p>
+<p>Total : <strong><?=count($prod)?></strong> <?=Str::plural('product', count($prod))?></p>
 
 <div class="table-responsive">
 

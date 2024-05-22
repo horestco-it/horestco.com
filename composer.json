@@ -12,5 +12,10 @@
 		"guzzlehttp/guzzle": "^7.3",
 		"sheetdb/sheetdb-php": "^1.0",
 		"monolog/monolog": "^2.3"
+	},
+	"config": {
+		"allow-plugins": {
+			"kylekatarnls/update-helper": false
+		}
 	}
 }
