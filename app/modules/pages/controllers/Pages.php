@@ -15,7 +15,7 @@ class Pages extends HRC_Controller {
     
     $this->data['version'] = $this->input->get('v') ? '-'.$this->input->get('v') : '';
 
-    $page = filter_var($page, FILTER_SANITIZE_STRING).$this->data['version'];
+    $page = filter_var($page, FILTER_SANITIZE_FULL_SPECIAL_CHARS).$this->data['version'];
 
 
     if ( ! file_exists(APPPATH.'modules/pages/views/'.$page.'.php'))

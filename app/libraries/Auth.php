@@ -1,7 +1,7 @@
 <?php
 
 use Horestco\My\Model as Model;
-
+#[\AllowDynamicProperties]
 class Auth
 {
 	public $login = '/customer/login';
