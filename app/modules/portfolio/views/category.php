@@ -56,7 +56,7 @@ $groups = [
         <?php if($name):?>
         <?=image_thumb($image, 580)?>
         <?php else:?>
-          <img src="'.base_url().img_url('not-available.jpg').'" />
+          <img src="<?=base_url().img_url('not-available.jpg')?>" />
         <?php endif;?>
         </div>
         <div class="card-stacked">
