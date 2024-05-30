@@ -48,7 +48,7 @@ class Portfolio extends HRC_Controller
 
     $this->load->helper('image');
 
-    $this->data['portfolio'] = $this->getPortfolios($slug);
+    $this->data['portfolio'] = Page::enabled()->slug($slug)->en()->first();
     $this->data['items'] = $items->toArray();
 
   
