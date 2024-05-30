@@ -12,13 +12,13 @@ require_once '../classes/Helper.php';
 $db = new Db;
 // $db->bind('q', '%'.@$_GET['q'].'%');
 $query = "
-	SELECT subcategories.*, categories.slug as category_slug
-	FROM subcategories 
-	LEFT JOIN categories 
-	ON subcategories.category_id = categories.id 
+SELECT subcategories.*, categories.slug as category_slug
+FROM subcategories 
+LEFT JOIN categories 
+ON subcategories.category_id = categories.id 
 ";
 
-if(@$_GET['q']){
+if(isset($_GET['q'])&&$_GET['q']){
 	$query .="WHERE (subcategories.name like :q ) ";
 }
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 /**
 * 
@@ -24,13 +25,32 @@ class Portfolio extends HRC_Controller
 
   public function category($slug)
   {
-    $slug = Str::slug(filter_var($slug, FILTER_SANITIZE_STRING));
+    $page = $this->input->get('page') ?? 1;
+    $slug = $this->uri->segment(1)."/".Str::slug($slug);
+    $perPage = 20;
+
+    $items = PortoClient::whereHas('page', function($q) use($slug) {
+      $q->where('slug', $slug);
+    })->with('image');
+
+    $total = $items->count();
+
+    $items->limit($perPage)->skip($perPage * ($page-1));
+    
+    $items = new LengthAwarePaginator(
+      $items->get(), $total, $perPage, $page, [
+        'path' => current_url(),
+        'query' => $this->input->get()
+      ]
+    );
+
+    // dd($items->toArray());
 
     $this->load->helper('image');
 
-    $this->data['portfolio'] = $this->getPortfolios($this->uri->segment(1)."/".$slug);
+    $this->data['portfolio'] = $this->getPortfolios($slug);
+    $this->data['items'] = $items->toArray();
 
-    // vd($this->data['portfolio']->toArray());
   
     $this->load->view('category', $this->data);
   }
