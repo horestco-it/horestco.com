@@ -10,7 +10,7 @@ require_once '../classes/Helper.php';
 // 	include '../'.$class.'.php';
 // });
 $db = new Db;
-$db->bind('q', '%'.@$_GET['q'].'%');
+// $db->bind('q', '%'.@$_GET['q'].'%');
 $query = "
 	SELECT subcategories.*, categories.slug as category_slug
 	FROM subcategories 
