@@ -245,7 +245,7 @@ if (!function_exists('setup_class'))
 	 * @param  array 	$class   class collection .example : ['classActive'=>'classInactive']
 	 * @return string css class collection
 	 */
-	function setup_class($inArray = array(), $class)
+	function setup_class(array $inArray, $class)
 	{
 		$classes = (array)$class;
 
