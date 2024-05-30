@@ -53,7 +53,7 @@ $groups = [
     <div class="col s12 m6 l4">
       <div class="card horizontal z-depth-0" style="border:1px solid #ddd">
         <div class="card-image">
-        <?=image_thumb($image, 200)?>
+        <?=image_thumb($image, 580)?>
         </div>
         <div class="card-stacked">
           <div class="card-content">
