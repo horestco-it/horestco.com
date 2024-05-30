@@ -53,7 +53,11 @@ $groups = [
     <div class="col s12 m6 l4">
       <div class="card horizontal z-depth-0" style="border:1px solid #ddd">
         <div class="card-image">
+        <?php if($name):?>
         <?=image_thumb($image, 580)?>
+        <?php else:?>
+          <img src="'.base_url().img_url('not-available.jpg').'" />
+        <?php endif;?>
         </div>
         <div class="card-stacked">
           <div class="card-content">
