@@ -1,6 +1,9 @@
 
 <?php 
+  ini_set("display_errors", 'On');
+
 include '../../../classes/Db.class.php';
+include '../../../classes/DB.php';
 include '../../../classes/Helper.php';
 
 if ( $_GET['action'] == 'search' ) {
@@ -17,10 +20,12 @@ if ( $_GET['action'] == 'search' ) {
 		$page = $db->row("SELECT * FROM pages WHERE id = :id ");
 	}
 	else{
-		$db->bind('id', $_GET['id']);
-		$clients = $db->query(" SELECT * FROM porto_clients WHERE page_id = :id ORDER BY sort_order ");
-		$db->bind('id', $_GET['id']);
-		$page = $db->row("SELECT * FROM pages WHERE id = :id ");
+		// $db->bind('id', $_GET['id']);
+		$clients = PortoClient::where('page_id', $_GET['id'])->with('image', 'page')->orderBy('sort_order')->get(); 
+		// $db->query(" SELECT * FROM porto_clients WHERE page_id = :id ORDER BY sort_order ");
+		// $db->bind('id', $_GET['id']);
+		$page = Page::find($_GET['id']);
+		//  $db->row("SELECT * FROM pages WHERE id = :id ");
 	}
 
 	if ( count($clients) > 0) {
@@ -58,14 +63,14 @@ if ( $_GET['action'] == 'search' ) {
 		// fetch all clients
 		else{
 			foreach ($clients as $row) {
-				$clients[$i]['status'] =  $row['is_enabled'];
-				$clients[$i]['category'] = $helper->url_slug($page['name']);
-				$db->bind('clientid', $row['id']);
-				$images = $db->query(" SELECT name FROM porto_images WHERE porto_client_id = :clientid ORDER BY is_primary ASC ");
-				foreach ($images as $img) {
-					$clients[$i]['img'] = $img['name'];
-				}
-				$i = $i + 1;
+				// $clients[$i]['status'] =  $row['is_enabled'];
+				// $clients[$i]['category'] = $helper->url_slug($page['name']);
+				// $db->bind('clientid', $row['id']);
+				// $images = $db->query(" SELECT name FROM porto_images WHERE porto_client_id = :clientid ORDER BY is_primary ASC ");
+				// foreach ($images as $img) {
+				// 	$clients[$i]['img'] = $img['name'];
+				// }
+				// $i = $i + 1;
 			}
 		}
 		dj($clients);
@@ -74,14 +79,6 @@ if ( $_GET['action'] == 'search' ) {
 		echo dj("empty");
 	}
 }
-
-
-function dd($rs){
-	echo "<pre>";
-	var_dump($rs);
-	echo "</pre>";
-}
-
 function dj($rs){
 	echo json_encode($rs);
 }

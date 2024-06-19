@@ -9,6 +9,9 @@ class Google
 		'update' => 'upStck',
 	];
 
+	protected $http;
+	protected $url;
+
 	public function __construct()
 	{
 		$this->http = new GuzzleHttp\Client;

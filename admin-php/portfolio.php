@@ -253,12 +253,12 @@ if ( isset($_GET['action']) && $_GET['action'] == 'setprimary' ) {
 				// console.log(data)
 				resultThumbnail.empty()
 				if(data == 'empty'){
-					resultThumbnail.append('<p class="text-danger text-center">Empty Record</p>')
+					resultThumbnail.append('<p class="text-center text-danger">Empty Record</p>')
 				}
 				else{
 					$.each(data, function(key,client){
 
-						var src = ( client.img ) ?  imageUrl+'portfolio/'+client.category+'/'+client.img : '<?=BASE_URL?>/images/index/not-available.jpg'
+						var src = ( client.image && client.image.name ) ?  imageUrl+'portfolio/'+client.page.name+'/'+client.image.name : '<?=BASE_URL?>/images/index/not-available.jpg'
 						var thumbnail  = '<div class="col-xs-6 col-sm-3 col-md-2 col-lg-2 item-thumbnail" data-id="'+client.id+'"><div class="thumbnail">'
 								thumbnail += '<a href="javascript:void(0)"><img class="detailclient" src="'+src+'" /></a>'
 								thumbnail += '<div class="caption"><a class="detailclient" href="javascript:void"><h5>'+client.name+'</h5></a>'
