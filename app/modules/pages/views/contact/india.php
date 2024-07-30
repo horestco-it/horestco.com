@@ -31,6 +31,22 @@
                       <span class="value"><font color="#039be5"><?=$contact['phones'][0]?></font></span>
                       </a> 
                   </li>
+                  <li title="Phone">
+                      <i class="fa fa-phone fa-lg"></i>  
+                      <span class="type hide">Phone</span>
+                      <span>:</span>
+                      <a href="tel:<?=preg_replace('/-|\s/', '',$contact['phones'][1])?>"> 
+                      <span class="value"><font color="#039be5"><?=$contact['phones'][1]?></font></span>
+                      </a> 
+                  </li>
+                  <li title="Whatsapp">
+                      <i class="fa fa-whatsapp fa-lg"></i>  
+                      <span class="type hide">Whatsapp</span>
+                      <span>:</span>
+                      <a href="tel:<?=preg_replace('/-|\s/', '',$contact['whatsapp'][0])?>"> 
+                      <span class="value"><font color="#039be5"><?=$contact['whatsapp'][0]?></font></span>
+                      </a> 
+                  </li>
                   <li title="Email">
                       <i class="fa fa-envelope fa-lg"></i> 
                       <span class="type hide">Email</span>
@@ -44,9 +60,9 @@
                   <li class="geo" title="geo">
                     <i class="fa fa-street-view fa-lg"></i>
                         <span>:</span>
-                      <a target="_blank" href="<?=$contact['map_link']?>">
-                        <abbr class="latitude" title="<?=$contact['lat'][0]?>"><font color="#039be5"><?=$contact['lat'][1]?></font></abbr>
-                        <abbr class="longitude" title="<?=$contact['long'][0]?>"><font color="#039be5"><?=$contact['long'][1]?></font></abbr>
+                      <a target="_blank" href="<?=$contact['map_link']?>"> 
+                        <abbr class="latitude" title="34°00'51.0"N"><font color="#039be5">34°00'51.0"N</font></abbr>
+                        <abbr class="longitude" title="75°00'53.9"E"><font color="#039be5">75°00'53.9"E</font></abbr>
                       </a>
                   </li>
                 </ul>
@@ -56,7 +72,7 @@
                     <img src="<?=server_img_url()?>socials/mp.png" alt="google maps">&nbsp&nbsp  
                     <span class="valign"></span>
                   </a>
-                  <a href="https://www.waze.com/livemap/directions/malaysia/selangor/shah-alam/horestco-industries-sdn.-bhd.?place=ChIJoTtX9FpMzDERt-gB2C7p5sQ&utm_campaign=waze_website&utm_source=waze_website"_blank" title="Waze">
+                  <a href="<?=$contact['map_link']?>" title="map">
                     <img src="<?=server_img_url()?>socials/waz.png" alt="waze">&nbsp&nbsp  
                     <span class="valign"></span>
                   </a>
@@ -81,6 +97,22 @@
                     <span class="valign"></span>
                   </a>
                 </div>
+              </div>
+              <div class="column1">
+                <ul class="tel">
+                  <li>
+                      <span><b>Export Enquiries</b></span>
+                  </li> 
+                  
+                  <li title="whatsapp">
+                      <i class="fa fa-whatsapp fa-lg"></i>  
+                      <span class="type hide">Whatsapp</span>
+                      <span>:</span>
+                    <a href="<?=preg_replace('/-|\s/', '',$contact['whatsapp'][1])?>">  
+                      <span class="value"><font color="#039be5"><?=$contact['whatsapp'][1]?></font></span>
+                    </a> 
+                  </li>
+                </ul>
               </div>
             </div>
           

@@ -116,15 +116,15 @@ $config['india'] = [
     'postal-code' => '191103',
     'country-name' => 'INDIA',
     'phones' => [
-        '+91-1933294378',
-        '+91-6005202688',
+        '+91-1933461351',
+        '+91-7051859619',
     ],
-    'whatsapp' => ['+916005202688', '+60 169928921'],
+    'whatsapp' => ['+91-7051859619', '+60 169928921'],
     'email' => 'info@horestco.com',
-    'lat' => ['3.086795', 'N 6° 086795'],
+    'lat' => ['3.086795', 'N 6° 086795'], // 34°00'51.0"N 75°00'53.9"E
     'long' => ['101.574548', 'E 101° 574548'],
-    'map_link' => 'http://maps.google.com.my/maps?hl=en&ampgeorestrict=input_srcid:717483e9a2a6cfaa&ampie=UTF8&ampview=map&ampcid=3081330757634961010&ampq=Horestco+Industries+(M)+Sdn+Bhd&amphq=Horestco+Industries+(M)+Sdn+Bhd&amphnear=&ampll=3.097664,101.586971&ampspn=0.077135,0.128746&ampz=13&ampsource=embed',
-    'map_embed' => 'http://maps.google.com.my/maps?hl=en&ampgeorestrict=input_srcid:717483e9a2a6cfaa&ampie=UTF8&ampview=map&ampcid=3081330757634961010&ampq=Horestco+Industries+(M)+Sdn+Bhd&amphq=Horestco+Industries+(M)+Sdn+Bhd&amphnear=&ampll=3.097664,101.586971&ampspn=0.077135,0.128746&ampz=13&ampsource=embed',
+    'map_link' => 'https://maps.app.goo.gl/4HAxDbFhPXwr6gPcA',
+    'map_embed' => 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3307.1573755024847!2d75.0123972750871!3d34.01417111974071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDAwJzUxLjAiTiA3NcKwMDAnNTMuOSJF!5e0!3m2!1sid!2sid!4v1722348758371!5m2!1sid!2sid',
 ];
 /**
  * CONTACT MALDIVES
