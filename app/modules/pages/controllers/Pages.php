@@ -22,7 +22,6 @@ class Pages extends HRC_Controller {
     {
       return redirect('sitemap');
     }
-
     
     $this->data['page'] = $page;
 

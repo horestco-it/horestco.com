@@ -4,6 +4,7 @@ use \Illuminate\Database\Eloquent\Model;
 
 class PortoClient extends Model
 {
+	protected $appends = ['status'];
 	//scope
 	public function scopeEnabled($query)
 	{
@@ -36,6 +37,11 @@ class PortoClient extends Model
 	public function products()
 	{
 		return $this->belongsToMany('Product');
+	}
+
+	public function getStatusAttribute()
+	{
+		return $this->is_enabled == 1 ? true: false;
 	}
 
 }
