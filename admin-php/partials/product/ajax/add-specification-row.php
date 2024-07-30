@@ -2,7 +2,7 @@
 // for str_random() helper
 include '../../../../classes/DB.php';
 include '../../../../config.php';
-$rand = str_random(5);
+$rand = str()->random(5);
 
 ?>
 <div class="panel panel-default spcf-row" style="background: #f9f9f9">
@@ -190,7 +190,7 @@ $rand = str_random(5);
         <div class="col-sm-8">
           <div class="input-group">
             <div class="input-group-addon input-sm">MYR</div>
-            <input type="text" name="price-add[<?=$price->id?>][genuine_leather]" class="form-control input-sm" placeholder="Genuine Leather"/ value="0.00">
+            <input type="text" name="price-add[<?=$rand?>][genuine_leather]" class="form-control input-sm" placeholder="Genuine Leather" value="0.00"/>
           </div>
         </div>
       </div>
@@ -200,7 +200,7 @@ $rand = str_random(5);
         <div class="col-sm-8">
           <div class="input-group">
             <div class="input-group-addon input-sm">MYR</div>
-            <input type="text" name="price-add[<?=$price->id?>][synthetic_leather]" class="form-control input-sm"  placeholder="Synthetic Leather"/ value="0.00">
+            <input type="text" name="price-add[<?=$rand?>][synthetic_leather]" class="form-control input-sm"  placeholder="Synthetic Leather" value="0.00"/>
           </div>
         </div>
       </div>

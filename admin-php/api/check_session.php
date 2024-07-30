@@ -2,7 +2,7 @@
 
   $now  = time();
 
-  if ($now > $_SESSION['expired']) {
+  if (!isset($_SESSION['expired']) || $now > $_SESSION['expired']) {
 
     session_destroy();
     // redirect to login page
