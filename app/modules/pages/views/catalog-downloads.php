@@ -81,11 +81,23 @@
         <div class="row">
           <div class="col s12 m8 l5">
             <div class="collection">
-              <a href="<?=base_url('files/viro.pdf')?>" download class="collection-item">
-                <i class="mdi-action-get-app"></i>  Download the Viro® catalogue
+             
+            <a href="<?=base_url('files/material catalogue/VIRO CATALOG 2024.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® catalogue 2024
               </a>
-              <a href="<?=base_url('files/raucord-natural.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® catalogue</a>
-              <a href="<?=base_url('files/RAUCORD catalogue, Express Collection 2017.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® express collection</a>
+              <a href="<?=base_url('files/material catalogue/VIRO FIBER CATALOG 2022.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® fiber catalogue
+              </a>
+              <a href="<?=base_url('files/material catalogue/VIRO PRODUCTS CATALOG.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® product catalogue
+              </a>
+              <a href="<?=base_url('files/material catalogue/VIRO WEAVING PATTERN CATALOG 2022.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® weaving pattern catalogue
+
+                <a href="<?=base_url('files/material catalogue/Viro Naturra Brochure.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® Viro Naturra catalogue
+              <a href="<?=base_url('files/material catalogue/raucord-colour-card-classic.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® colour card classic</a>
+              <a href="<?=base_url('files/material catalogue/raucord-natural.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® natural collection</a>
             </div>
           </div>
         </div>
@@ -114,15 +126,25 @@
         <div class="row">
           <div class="col s12 m10 l5">
             <div class="collection">
-              <a href="<?=base_url('files/sunbrella-european-catalogue.pdf')?>" download class="collection-item">
-                <i class="mdi-action-get-app"></i>  Download the Sunbrella® Europan catalogue
-              </a>
-              <a href="<?=base_url('files/2013-2014-sunbrella-awning-marine-fabrics.pdf')?>" download class="collection-item">
-                <i class="mdi-action-get-app"></i>  Download the Sunbrella® catalogue
-              </a>
-              <a href="<?=base_url('files/sunproof-olefin-catalogue.pdf')?>" download class="collection-item">
-                <i class="mdi-action-get-app"></i>  Download the Sunproof® catalogue
-              </a>
+            <a href="<?=base_url('files/material catalogue/Sunbrella European Catalogue.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunbrella® Europan catalogue.
+                  </a>
+                  <a href="<?=base_url('files/material catalogue/Sunbrella Catalog.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunbrella® catalogue collection.
+                  </a>
+                  <a href="<?=base_url('files/material catalogue/Premium 1 catalogue ED2024 V2 horestco.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® catalogue collection.
+                  </a>
+
+                  <a href="<?=base_url('files/material catalogue/OUTDOOR ACRYLIC FABRIC 2023.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® Acrylic Fabric collection.
+                  </a>
+
+                
+
+                  <a href="<?=base_url('files/material catalogue/sling- sunproof.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® Sling collection.
+                  </a>
             </div>
           </div>
         </div>
@@ -131,6 +153,227 @@
     </div>
   </div>
 </section>   
+
+
+
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      <img src="<?=base_url().img_url()?>pages/materials-marbels-and-granites.jpg" alt="Marbles and granites" class="responsive-img">
+      </div>
+      <div class="col s12 m10">
+        <h5>Marbles and Granites:</h5>
+        <p>
+        We often make furniture with Marble and Granite Tops. We are able to source local Indonesian and Malaysian marbles as well as imported Italian, Egyptian or Indian Marbles and granites upon request.
+        </p>
+        <div class="row">
+          <div class="col s12 m10 l5">
+            <div class="collection">
+              <a href="<?=base_url('files/material catalogue/STONE TABLE TOPS CATALOGUE.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download Premium material Terazzo®  </a>
+             <a href="<?=base_url('files/material catalogue/Giza Porcelain Stone Table Tops (MY).pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download Table Top Gizza® </a>
+             <a href="<?=base_url('files/material catalogue/Quadra E-Catalog 2024.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Countertop Quadra® </a>
+             <a href="<?=base_url('files/material catalogue/SUMMIT Rustique Catalog 2023.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Summit Rustique® </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>  
+
+
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      <img src="<?=base_url().img_url()?>pages/materials-stainless-steal.jpg" alt="Stainless Steel #304" class="responsive-img">
+      </div>
+      <div class="col s12 m10">
+        <h5>Stainless Steel #304:</h5>
+        <p>
+        We use marine grade 304 stainless steel in our furniture. It is highly resistant to corrosion and easy to maintain. It is precisely made using Argon gas Tig welding and comes in hairline or mirror finish surfaces. Certification of grade authenticity of our stainless steel profiles are available upon request.
+        </p>
+        <div class="row">
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      <img src="<?=base_url().img_url()?>pages/materials-furniture-furnishing.jpg" alt="furniture finishing" class="responsive-img">
+      </div>
+      <div class="col s12 m10">
+        <h5>Furniture Finishing:</h5>
+        <p>
+        Our furniture finishing team has expertise in various types of water and oil based wood surface finishes, varnishes and stains including Nitrocellulose(NC), Polyuretherane, Lacquer and Shellac. Our outdoor teak furniture is finely sanded and waxed without any further finishing process leaving the natural grains visible.
+        </p>
+        <div class="row">
+          <div class="col s12 m10 l5">
+            <div class="collection">
+            <a href="<?=base_url('files/material catalogue/Finishing options.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Timber Finishing® </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      <img src="<?=base_url().img_url()?>pages/materials-alumunium.jpg" alt="aluminium furniture" class="responsive-img">
+      </div>
+      <div class="col s12 m10">
+        <h5>Aluminium:</h5>
+        <p>
+        Aluminium is a highly malleable metal. It is corrosion resistant and can be easily made into various shapes and sizes. We use powder coated non-anondised aluminium in our outdoor furniture frames.
+        </p>
+        <div class="row">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      
+      </div>
+      <div class="col s12 m10">
+        <h5>Foams:</h5>
+        <p>
+        Foams that comply with different countries standards are available upon request. We recommend Quck Dry Foam - for outdoor and sea-side use of furniture.
+        </p>
+        <div class="row">
+          <div class="col s12 m10 l5">
+            <div class="collection">
+            <a href="<?=base_url('files/material catalogue/urecel quickdry brochure.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download The Brochure  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      
+      </div>
+      <div class="col s12 m10">
+        <h5>Serafil Threads:</h5>
+        <p>
+        We use serafil threads manufactured by Amann Group, Germany for outdoor cushions and parasols. Serafil threads are multifilament sewing threads that are highly durable and resistant to weather. The water repellent version Serafil WR is a basic requirement for water-tight seams.
+        </p>
+        <div class="row">
+          <div class="col s12 m10 l5">
+          
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      
+      </div>
+      <div class="col s12 m10">
+        <h5>Leather:</h5>
+        <p>
+        We are able to source various leathers produced in Indonesia, India and Italy. For more information about various leathers, <a href="<?=base_url('files/material catalogue/OUTDOOR SYNTHETIC LEATHER UPHOLSTERY.pdf')?>">click here</a>. Should you require samples of any of the above mentioned materials, please feel free to contact us and we will post them to your address.
+        </p>
+        <div class="row">
+          <div class="col s12 m10 l5">
+            <div class="collection">
+            <a href="<?=base_url('files/material catalogue/OUTDOOR SYNTHETIC LEATHER UPHOLSTERY.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® Synthetic Leather</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      
+      </div>
+      <div class="col s12 m10">
+        <h5>Fittings:</h5>
+        <p>
+        Our fittings are made from either stainless steel #304 or Solid Brass – often custom-made for our products. Certain off the shelf aluminium alloy fittings may also be used especially door and drawer handles. Hinges and drawer rails are sourced from Hafele or equivalent quality suppliers.
+        </p>
+        <div class="row">
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
+
+<section id="fabric" class="section scrollspy">
+  <div class="container">
+    <div class="row">
+
+      <div class="col s12 m2 hide-on-small-only">
+      
+      </div>
+      <div class="col s12 m10">
+        <h5>High Pressure Laminate (HPL):</h5>
+        <p>
+        High Pressure Laminate is a surface solution with extensive choice of color, pattern and textures. Its advantages include its non-porosity, overall durability, impact and stain resistance. 
+              F&B outlets prefer these table tops for being easy to clean & maintain. 
+              We use laminates 
+              from <a href="<?=base_url('files/wilson-art-catalog.pdf')?>" target="_blank">WilsonArt (USA)</a> 
+              and <a href="<?=base_url('files/catalog-arborite.pdf')?>" target="_blank">Arborite (Canada)</a>.
+        </p>
+        <div class="row">
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section> 
 
 
 <?php $this->load->view('partials/footer') ?>

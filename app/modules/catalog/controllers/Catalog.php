@@ -239,7 +239,7 @@ class Catalog extends HRC_Controller {
 
 		//============== appends more products in subcategory ============
 		if( $subcategory->products_more->count() ){
-			$products->orWhereIn('id', $subcategory->products_more->pluck('id')->toArray());
+			$products->orWhereIn('id', $subcategory->products_more()->enabled()->pluck('id')->toArray());
 		}
 
 		$this->data['subcategory']	= $subcategory;
@@ -252,7 +252,7 @@ class Catalog extends HRC_Controller {
 
 			//============== appends more products in subcategory ============
 			if( $relation->products_more->count() ){
-				$relationProducts->orWhereIn('id', $relation->products_more->pluck('id')->toArray())->get();
+				$relationProducts->orWhereIn('id', $relation->products_more()->enabled()->pluck('id')->toArray())->get();
 			}
 			$this->data['relation'] = $relation;
 			$this->data['relationProducts'] = $relationProducts->get();
@@ -264,7 +264,8 @@ class Catalog extends HRC_Controller {
 
 	private function queryProducts()
 	{
-		return Product::enabled()
+		return Product::query()
+		->where('is_enabled', true)
 				->sort()
 				->with([
 					'images' => function($query){

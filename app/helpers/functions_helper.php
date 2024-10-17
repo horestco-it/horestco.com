@@ -51,10 +51,10 @@ if (! function_exists('get_meta'))
       return;
     }
     else{
-      $title = 'Teak Wood Furniture - HORESTCO INDUSTRIES (M) SDN. BHD (888188-K)';
-      $description = 'Buy teak wood furniture for your home from Horestco, furniture Manufacturer, Retailer and Wholesaler. We offer a wide range of furniture designs suiting to your needs.';
-      $keyword = 'Teak Wood Furniture Malaysia, Outdoor Furniture Malaysia, Restaurant Furniture Wholesaler, Rattan Furniture, Restaurant Chairs Distributor, Custom Fine Dining Furnitures, Swimming Pool Furniture Kuala Lumpur, Restaurant Table And Chair Supplier, Bar Chairs And Tables, Hotel Furniture Supplier Malaysia, Outdoor Stainless Steel Furniture, Modern Resort Furniture, Contract Cafe Furniture, Malaysia, Dining Furniture, Living Furniture, Bedroom Furniture, Outdoor Funiture';
-      $author = 'Horestco Sdn. Bhd. - Malaysia';
+      $title = 'Home Furniture, Restaurant Furniture, Resort Furniture';
+      $description = 'Stainless steel,  synthetic wicker and teak wood furniture Manufacturer Indonesia';
+      $keyword = 'teak furniture Indonesia, outdoor furniture java, restaurant furniture wholesaler, rattan furniture Jepara, teak wood furniture, restaurant chairs maker, custom fine dining furnitures, indonesian outdoor furniture factory, swimming pool furniture, restaurant table and chair supplier, bar chairs and tables, hotel furniture supplier, outdoor stainless steel furniture, modern resort furniture, contract cafe furniture, jepara indonesia';
+      $author = 'Horestco furniture - Malaysia & Indonesia';
       $robots = 'index, follow';
 
 			echo '<title>'.$title.' - HORESTCO</title>';

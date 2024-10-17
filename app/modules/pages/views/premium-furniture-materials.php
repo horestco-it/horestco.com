@@ -95,14 +95,24 @@
                   Marine grade performance fabric manufactured by Glen Ravens of USA. It is 100% solution dyed acrylic fiber that is colorfast and resistant to mildew.
                 </p>
                 <div class="collection">
-                  <a href="<?=base_url('files/sunbrella-european-catalogue.pdf')?>" class="collection-item" target='_blank'>
-                    <i class="fa fa-download left"></i>  Download the Sunbrella® Europan catalogue collection here.
+                <a href="<?=base_url('files/material catalogue/Sunbrella European Catalogue.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunbrella® Europan catalogue.
                   </a>
-                  <a href="<?=base_url('files/2013-2014-sunbrella-awning-marine-fabrics.pdf')?>" class="collection-item" target='_blank'>
-                    <i class="fa fa-download left"></i>  Download the Sunbrella® catalogue collection here.
+                  <a href="<?=base_url('files/material catalogue/Sunbrella Catalog.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunbrella® catalogue collection.
                   </a>
-                  <a href="<?=base_url('files/sunproof-olefin-catalogue.pdf')?>" class="collection-item" target='_blank'>
-                    <i class="fa fa-download left"></i>  Download the Sunproof® catalogue collection here.
+                  <a href="<?=base_url('files/material catalogue/Premium 1 catalogue ED2024 V2 horestco.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® catalogue collection.
+                  </a>
+
+                  <a href="<?=base_url('files/material catalogue/OUTDOOR ACRYLIC FABRIC 2023.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® Acrylic Fabric collection.
+                  </a>
+
+                
+
+                  <a href="<?=base_url('files/material catalogue/sling- sunproof.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® Sling collection.
                   </a>
                 </div>
               </div>
@@ -117,6 +127,14 @@
             <p>We use the following fabrics for indoor our indoor range of furniture:</p>
             <ul>
               <li>Regency®</li>
+              <div class="row">
+              <div class="col s12 m12 l5">
+                <div class="collection">
+                  <a href="<?=base_url('files/material catalogue/Advance E-Catalog Regency.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Regency® catalogue</a>
+                  
+                </div>
+              </div>
+            </div>
               <li>Gisella®</li>
               <li>Regatta®</li>
               <li>Namura®</li>
@@ -148,9 +166,22 @@
             <div class="row">
               <div class="col s12 m12 l5">
                 <div class="collection">
-                  <a href="<?=base_url('files/viro.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Viro® catalogue</a>
-                  <a href="<?=base_url('files/raucord-natural.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Rehau® catalogue</a>
-                  <a href="<?=base_url('files/RAUCORD catalogue, Express Collection 2017.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Rehau® express collection</a>
+                <a href="<?=base_url('files/material catalogue/VIRO CATALOG 2024.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® catalogue 2024
+              </a>
+              <a href="<?=base_url('files/material catalogue/VIRO FIBER CATALOG 2022.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® fiber catalogue
+              </a>
+              <a href="<?=base_url('files/material catalogue/VIRO PRODUCTS CATALOG.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® product catalogue
+              </a>
+              <a href="<?=base_url('files/material catalogue/VIRO WEAVING PATTERN CATALOG 2022.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® weaving pattern catalogue
+
+                <a href="<?=base_url('files/material catalogue/Viro Naturra Brochure.pdf')?>" download class="collection-item">
+                <i class="mdi-action-get-app"></i>  Download the Viro® Viro Naturra catalogue
+              <a href="<?=base_url('files/material catalogue/raucord-colour-card-classic.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® colour card classic</a>
+              <a href="<?=base_url('files/material catalogue/raucord-natural.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® natural collection</a>
                 </div>
               </div>
             </div>
@@ -169,6 +200,10 @@
             <p>
               We often make furniture with Marble and Granite Tops. We are able to source local Indonesian and Malaysian marbles as well as imported Italian, Egyptian or Indian Marbles and granites upon request.
             </p>
+            <a href="<?=base_url('files/material catalogue/STONE TABLE TOPS CATALOGUE.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download Premium material Terazzo®</a><br>
+            <a href="<?=base_url('files/material catalogue/Giza Porcelain Stone Table Tops (MY).pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download Table Top Gizza®</a><br>
+            <a href="<?=base_url('files/material catalogue/Quadra E-Catalog 2024.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Countertop Quadra®</a><br>
+            <a href="<?=base_url('files/material catalogue/SUMMIT Rustique Catalog 2023.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Summit Rustique®</a><br>
           </div>
 
           <div class="col s12 m6 l3">
@@ -190,6 +225,7 @@
               Our furniture finishing team has expertise in various types of water and oil based wood surface finishes, varnishes and stains including Nitrocellulose(NC), Polyuretherane, Lacquer and Shellac.<br>
               Our outdoor teak furniture is finely sanded and waxed without any further finishing process leaving the natural grains visible.
             </p>
+            <a href="<?=base_url('files/material catalogue/Finishing options.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Timber Finishing® </a><br>
           </div>
 
           <div class="col s12 m6 l3">
@@ -211,7 +247,9 @@
             <h5>Foams</h5>
             <p>
               Foams that comply with different countries standards are available upon request. We recommend Quck Dry Foam - for outdoor and sea-side use of furniture.
+              <br><a href="<?=base_url('files/material catalogue/urecel quickdry brochure.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download The Brochure  </a><br>
             </p>
+           
           </div>
           <div class="col s12 m6 l4">
             <h5>Serafil Threads</h5>
@@ -225,6 +263,8 @@
               We are able to source various leathers produced in Indonesia, India and Italy. For more information about various leathers, <a href="">click here</a>.<br>
               Should you require samples of any of the above mentioned materials, please feel free to contact us and we will post them to your address.
             </p>
+            <a href="<?=base_url('files/material catalogue/OUTDOOR SYNTHETIC LEATHER UPHOLSTERY.pdf')?>" class="collection-item" target='_blank'>
+                    <i class="fa fa-download left"></i>  Download the Sunproof® Synthetic Leather collection</a>
           </div>
       </section>
 
