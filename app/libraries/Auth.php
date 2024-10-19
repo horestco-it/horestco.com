@@ -72,7 +72,7 @@ class Auth
 		$provider = new Google([
 		  'clientId'     => '9921198422-kvm5h7enn6geggnug0movkpvv2n17mtn.apps.googleusercontent.com',
 		  'clientSecret' => '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',
-		  'redirectUri'  => 'http://localhost/horestco/customer/auth/google_login',
+		  'redirectUri'  => 'https://horestco.com/customer/auth/google_login',
 		]);
   
 		if (!isset($_GET['code'])) {
