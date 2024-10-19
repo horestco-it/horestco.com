@@ -32,20 +32,20 @@ $config['currency'] = 'USD';
 | a PHP script and you can easily do that on your own.
 |
 */
-// $setting = parse_ini_file(FCPATH . "setting.ini.php");
+$setting = parse_ini_file(FCPATH . "setting.ini.php");
 
-// $base = isset($setting['url']) ? $setting['url'] : 'https://horestco.com';
+$base = isset($setting['url']) ? $setting['url'] : 'https://horestco.com';
 
-// if( !is_cli() ){
-//     $base .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
-// }
-// else{
-//     $base .= '/';
-// }
+if( !is_cli() ){
+    $base .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+}
+else{
+    $base .= '/';
+}
 
-// $config['base_url'] = $base;
+$config['base_url'] = $base;
 
-$config['base_url'] = 'http://localhost/horestco/';
+
 
 
 /*
