@@ -81,7 +81,7 @@
 					<a href="<?= base_url('customer/auth/google_login'); ?>" style="display: inline-flex; align-items: center; justify-content: center; background-color: #4285F4; color: white; padding: 10px 20px; border-radius: 5px; font-family: Arial, sans-serif; text-decoration: none; width: 200px;">
 						<i class="fab fa-google" style="margin-right: 8px;"></i> Sign in with Google
 					</a>
-
+				</div>
 				</div>
 
 				</div>
