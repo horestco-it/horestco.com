@@ -75,6 +75,15 @@
    						 
 					</form>
 
+					<div class="third-party-login"> 
+					 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+					 <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+					<a href="<?= base_url('customer/auth/google_login'); ?>" style="display: inline-flex; align-items: center; justify-content: center; background-color: #4285F4; color: white; padding: 10px 20px; border-radius: 5px; font-family: Arial, sans-serif; text-decoration: none; width: 200px;">
+						<i class="fab fa-google" style="margin-right: 8px;"></i> Sign in with Google
+					</a>
+
+				</div>
+
 				</div>
 
 			</div>

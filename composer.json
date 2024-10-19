@@ -13,7 +13,8 @@
 		"sheetdb/sheetdb-php": "^1.0",
 		"monolog/monolog": "^2.3",
 		"symfony/var-dumper": "^7.0",
-		"illuminate/pagination": "^10.48"
+		"illuminate/pagination": "^10.48",
+		"league/oauth2-google": "^4.0"
 	},
 	"config": {
 		"allow-plugins": {

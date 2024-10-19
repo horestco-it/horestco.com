@@ -1,6 +1,8 @@
 <?php
 
 use Horestco\My\Model as Model;
+use League\OAuth2\Client\Provider\Google;
+
 #[\AllowDynamicProperties]
 class Auth
 {
@@ -16,9 +18,15 @@ class Auth
 	}
 
 	public function check()
-	{
-		return isset($this->ci->session->auth) && $this->ci->session->auth['check'] ;
-	}
+{
+    $authData = $this->ci->session->userdata('auth');
+
+    if ($authData === null) {
+        return false;
+    }
+
+    return isset($authData['check']) && $authData['check'] == 1;
+}
 
 	public function user($param = null)
 	{
@@ -56,6 +64,69 @@ class Auth
 		return true;
 	}
 
+	public function google_login()
+	{
+	  if (session_status() == PHP_SESSION_NONE) {
+		  session_start();
+	  }
+		$provider = new Google([
+		  'clientId'     => '9921198422-kvm5h7enn6geggnug0movkpvv2n17mtn.apps.googleusercontent.com',
+		  'clientSecret' => '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',
+		  'redirectUri'  => 'http://localhost/horestco/customer/auth/google_login',
+		]);
+  
+		if (!isset($_GET['code'])) {
+			
+			$authUrl = $provider->getAuthorizationUrl();
+			$_SESSION['oauth2state'] = $provider->getState();
+			header('Location: ' . $authUrl);
+			exit;
+		} else {
+			
+			if (empty($_GET['state']) || ($_GET['state'] !== $_SESSION['oauth2state'])) {
+				unset($_SESSION['oauth2state']);
+				die('Invalid state');
+			}
+  
+			try {
+			   
+				$token = $provider->getAccessToken('authorization_code', [
+					'code' => $_GET['code']
+				]);
+  
+			   
+				$user = $provider->getResourceOwner($token);
+  
+				$this->processUser($user);
+  
+			} catch (Exception $e) {
+			   
+				die('Error: ' . $e->getMessage());
+			}
+		}
+	}
+
+	private function processUser($user)
+  {
+	
+	  $customer = Model\Customer::where('email', $user->getEmail())->first();
+
+	  if (is_null($customer)) {
+		
+		  $customer = new Model\Customer();
+		  $customer->email = $user->getEmail();
+		  $customer->name = $user->getName();
+		  
+		  $customer->save();
+	  }
+
+	  $this->setAuth(array_merge(['check' => true], $customer->toArray()));
+	  
+	  
+	  header('Location: ' . $this->redirectIfAuth);
+	  exit;
+  }
+
 	public function hasVerified($customer)
 	{
 		return $customer['is_verified'] == 1 ? true : false;
@@ -63,8 +134,11 @@ class Auth
 
 	public function setAuth($data)
 	{
-		return $this->ci->session->set_userdata(['auth'=>$data]);
+		$this->ci->session->set_userdata(['auth' => $data]);
+		$this->ci->session->sess_regenerate(TRUE);
 	}
+
+
 
 	public function destroy()
 	{

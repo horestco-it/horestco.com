@@ -64,6 +64,15 @@ $route['404_override'] = "pages/sitemap";
 $route['(:any)'] = "pages/single/$1";
 
 $route['translate_uri_dashes'] = FALSE;
+
+
+//// third login party /////
+$route['customer/auth/google_login'] = 'customer/auth/google_login';
+$route['customer/auth/facebook_login'] = 'customer/auth/facebook_login';
+$route['customer/auth/linkedin_login'] = 'customer/auth/linkedin_login';
+$route['customer/auth/appleid_login'] = 'customer/auth/appleid_login';
+
+
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING

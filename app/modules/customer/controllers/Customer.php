@@ -35,6 +35,40 @@ class Customer extends HRC_Controller
 
 	}
 
+	public function auth($loginType)
+{
+    $this->load->library('Auth');
+
+    try {
+        switch ($loginType) {
+            case 'google_login':
+                $this->auth->google_login();
+                break; 
+
+            case 'facebook_login':
+                $this->auth->facebook_login();
+                break; 
+
+            case 'linkedin_login':
+                $this->auth->linkedin_login();
+                break; 
+
+            case 'appleid_login':
+                $this->auth->appleid_login();
+                break; 
+
+            default:
+              
+                show_error('Invalid login type.');
+                break;
+        }
+    } catch (Exception $e) {
+        log_message('error', 'Login failed for ' . $loginType . ': ' . $e->getMessage());
+        show_error('Login failed. Please try again.');
+    }
+}
+
+
 
 
 	public function profile($name = null)
