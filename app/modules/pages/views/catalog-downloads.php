@@ -82,22 +82,22 @@
           <div class="col s12 m8 l5">
             <div class="collection">
              
-            <a href="<?=base_url('files/material catalogue/VIRO CATALOG 2024.pdf')?>" download class="collection-item">
-                <i class="mdi-action-get-app"></i>  Download the Viro® catalogue 2024
-              </a>
-              <a href="<?=base_url('files/material catalogue/VIRO FIBER CATALOG 2022.pdf')?>" download class="collection-item">
+            <a href="<?=base_url('files/material catalogue/viro-furniture-catalogue-2024.pdf')?>" download class="collection-item" aria-label="Viro Furniture Catalogue 2024 - Katalog furnitur Viro untuk 2024">
+            <i class="mdi-action-get-app"></i>  Download the Viro® catalogue 2024
+          </a>
+              <a href="<?=base_url('files/material catalogue/viro-fiber-furniture-catalogue-2022.pdf')?>" download class="collection-item" aria-label="Viro Fiber Furniture Catalogue 2022 - Katalog furnitur serat Viro edisi 2022">
                 <i class="mdi-action-get-app"></i>  Download the Viro® fiber catalogue
               </a>
-              <a href="<?=base_url('files/material catalogue/VIRO PRODUCTS CATALOG.pdf')?>" download class="collection-item">
+              <a href="<?=base_url('files/material catalogue/viro-furniture-products-catalogue.pdf')?>" download class="collection-item" aria-label="Viro Furniture Products Catalogue - Katalog produk furnitur dari Viro">
                 <i class="mdi-action-get-app"></i>  Download the Viro® product catalogue
               </a>
-              <a href="<?=base_url('files/material catalogue/VIRO WEAVING PATTERN CATALOG 2022.pdf')?>" download class="collection-item">
+              <a href="<?=base_url('files/material catalogue/viro-weaving-pattern-catalogue-2022.pdf')?>" download class="collection-item" aria-label="Viro Weaving Pattern Catalogue 2022 - Katalog pola anyaman Viro edisi 2022">
                 <i class="mdi-action-get-app"></i>  Download the Viro® weaving pattern catalogue
 
-                <a href="<?=base_url('files/material catalogue/Viro Naturra Brochure.pdf')?>" download class="collection-item">
+                <a href="<?=base_url('files/material catalogue/viro-natura-furniture-brochure.pdf')?>" download class="collection-item" aria-label="Viro Natura Furniture Brochure - Brosur produk furnitur alami dari Viro">
                 <i class="mdi-action-get-app"></i>  Download the Viro® Viro Naturra catalogue
-              <a href="<?=base_url('files/material catalogue/raucord-colour-card-classic.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® colour card classic</a>
-              <a href="<?=base_url('files/material catalogue/raucord-natural.pdf')?>" download class="collection-item"><i class="mdi-action-get-app"></i>  Download the Rehau® natural collection</a>
+              <a href="<?=base_url('files/material catalogue/raucord-classic-colour-card.pdf')?>" download class="collection-item" aria-label="Raucord Classic Colour Card - warna klasik untuk produk Raucord"><i class="mdi-action-get-app"></i>  Download the Rehau® colour card classic</a>
+              <a href="<?=base_url('files/material catalogue/raucord-natural-fiber-furniture.pdf')?>" download class="collection-item" aria-label="Raucord Natural Fiber Furniture - Informasi produk furnitur dari serat alami Raucord"><i class="mdi-action-get-app"></i>  Download the Rehau® natural collection</a>
             </div>
           </div>
         </div>
@@ -126,23 +126,19 @@
         <div class="row">
           <div class="col s12 m10 l5">
             <div class="collection">
-            <a href="<?=base_url('files/material catalogue/Sunbrella European Catalogue.pdf')?>" class="collection-item" target='_blank'>
+                   <a href="<?=base_url('files/material catalogue/sunbrella-european-furniture-catalogue.pdf')?>" class="collection-item" aria-label="Sunbrella European Furniture Catalogue - Katalog furnitur Sunbrella edisi Eropa" target='_blank'>
                     <i class="fa fa-download left"></i>  Download the Sunbrella® Europan catalogue.
                   </a>
-                  <a href="<?=base_url('files/material catalogue/Sunbrella Catalog.pdf')?>" class="collection-item" target='_blank'>
+                  <a href="<?=base_url('files/material catalogue/sunbrella-furniture-fabric-catalogue.pdf')?>" class="collection-item" aria-label="Sunbrella Furniture Fabric Catalogue - Katalog kain furnitur Sunbrella" target='_blank'>
                     <i class="fa fa-download left"></i>  Download the Sunbrella® catalogue collection.
                   </a>
-                  <a href="<?=base_url('files/material catalogue/Premium 1 catalogue ED2024 V2 horestco.pdf')?>" class="collection-item" target='_blank'>
+                  <a href="<?=base_url('files/material catalogue/premium-furniture-catalogue-ED2024-horestco.pdf')?>" class="collection-item" aria-label="Premium Furniture Catalogue ED2024 Horestco - Katalog furnitur premium terbaru edisi 2024" target='_blank'>
                     <i class="fa fa-download left"></i>  Download the Sunproof® catalogue collection.
                   </a>
-
-                  <a href="<?=base_url('files/material catalogue/OUTDOOR ACRYLIC FABRIC 2023.pdf')?>" class="collection-item" target='_blank'>
+                  <a href="<?=base_url('files/material catalogue/outdoor-acrylic-fabric-catalog-2023.pdf')?>" class="collection-item" aria-label="Outdoor Acrylic Fabric Catalog 2023 - Katalog kain akrilik outdoor terbaru" target='_blank'>
                     <i class="fa fa-download left"></i>  Download the Sunproof® Acrylic Fabric collection.
                   </a>
-
-                
-
-                  <a href="<?=base_url('files/material catalogue/sling- sunproof.pdf')?>" class="collection-item" target='_blank'>
+                  <a href="<?=base_url('files/material catalogue/sling-sunproof-furniture-material.pdf')?>" class="collection-item" aria-label="Sling Sunproof Furniture Material - Informasi material furnitur" target='_blank'>
                     <i class="fa fa-download left"></i>  Download the Sunproof® Sling collection.
                   </a>
             </div>
@@ -172,10 +168,10 @@
         <div class="row">
           <div class="col s12 m10 l5">
             <div class="collection">
-              <a href="<?=base_url('files/material catalogue/STONE TABLE TOPS CATALOGUE.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download Premium material Terazzo®  </a>
-             <a href="<?=base_url('files/material catalogue/Giza Porcelain Stone Table Tops (MY).pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download Table Top Gizza® </a>
-             <a href="<?=base_url('files/material catalogue/Quadra E-Catalog 2024.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Countertop Quadra® </a>
-             <a href="<?=base_url('files/material catalogue/SUMMIT Rustique Catalog 2023.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Summit Rustique® </a>
+              <a href="<?=base_url('files/material catalogue/stone-table-tops-catalogue.pdf')?>" class="collection-item" aria-label="Stone Table Tops Catalogue - Katalog meja dengan pilihan material" target='_blank'><i class="fa fa-download left"></i>  Download Premium material Terazzo®  </a>
+             <a href="<?=base_url('files/material catalogue/giza-porcelain-stone-table-tops.pdf')?>" class="collection-item" aria-label="Giza Porcelain Stone Table Tops - Katalog meja dengan material batu porselen Giza" target='_blank'><i class="fa fa-download left"></i>  Download Table Top Gizza® </a>
+             <a href="<?=base_url('files/material catalogue/quadra-e-catalog-furniture-2024.pdf')?>" class="collection-item" aria-label="Quadra E-Catalog Furniture 2024 - Katalog furnitur terbaru dari Quadra" target='_blank'><i class="fa fa-download left"></i>  Download the Countertop Quadra® </a>
+             <a href="<?=base_url('files/material catalogue/summit-rustique-furniture-catalog-2023.pdf')?>" class="collection-item" aria-label="Summit Rustique Furniture Catalog 2023 - Katalog furnitur bergaya rustik untuk 2023" target='_blank'><i class="fa fa-download left"></i>  Download the Summit Rustique® </a>
             </div>
           </div>
         </div>
@@ -184,7 +180,6 @@
     </div>
   </div>
 </section>  
-
 
 
 <section id="fabric" class="section scrollspy">
@@ -223,7 +218,7 @@
         <div class="row">
           <div class="col s12 m10 l5">
             <div class="collection">
-            <a href="<?=base_url('files/material catalogue/Finishing options.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download the Timber Finishing® </a>
+            <a href="<?=base_url('files/material catalogue/furniture-finishing-options.pdf')?>" class="collection-item" aria-label="Furniture Finishing Options - Pilihan opsi finishing furnitur untuk berbagai kebutuhan" target='_blank'><i class="fa fa-download left"></i>  Download the Timber Finishing® </a>
             </div>
           </div>
         </div>
@@ -270,7 +265,7 @@
         <div class="row">
           <div class="col s12 m10 l5">
             <div class="collection">
-            <a href="<?=base_url('files/material catalogue/urecel quickdry brochure.pdf')?>" class="collection-item" target='_blank'><i class="fa fa-download left"></i>  Download The Brochure  </a>
+            <a href="<?=base_url('files/material catalogue/urecel-quickdry-furniture-material-brochure.pdf')?>" class="collection-item" aria-label="Urecel Quickdry Furniture Material Brochure - Brosur material furnitur dengan teknologi pengeringan cepat" target='_blank'><i class="fa fa-download left"></i>  Download The Brochure  </a>
             </div>
           </div>
         </div>
@@ -318,7 +313,7 @@
         <div class="row">
           <div class="col s12 m10 l5">
             <div class="collection">
-            <a href="<?=base_url('files/material catalogue/OUTDOOR SYNTHETIC LEATHER UPHOLSTERY.pdf')?>" class="collection-item" target='_blank'>
+            <a href="<?=base_url('files/material catalogue/outdoor-synthetic-leather-upholstery-catalogue.pdf')?>" class="collection-item" aria-label="Outdoor Synthetic Leather Upholstery Catalog - Katalog kulit sintetis untuk outdoor" target='_blank'>
                     <i class="fa fa-download left"></i>  Download the Sunproof® Synthetic Leather</a>
             </div>
           </div>
