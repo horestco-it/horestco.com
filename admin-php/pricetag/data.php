@@ -118,7 +118,7 @@ class Pricetag
 		$html .= '						</td>';
 		$html .= '					</tr>';
 		$html .= '					<tr>';
-		$html .= '						<td colspan="2" align="center"><font face="Carme" size="7">www.horestco.com.my</font></td>';
+		$html .= '						<td colspan="2" align="center"><font face="Carme" size="7">www.horestco.com</font></td>';
 		$html .= '					</tr>';
 		$html .= '				</table>';
 		$html .= '		</td>';

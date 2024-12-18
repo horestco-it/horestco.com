@@ -5,7 +5,7 @@
 
 <?php
 function imgPlaceholder(){
-  return 'https://via.placeholder.com/300x225?text=horestco.com.my';
+  return 'https://via.placeholder.com/300x225?text=horestco.com';
 }
 
 function getImage($submenu){
@@ -181,7 +181,7 @@ function imgDefaultMenu($menu){
 
       <!-- show in print view -->
       <ul class="right hide http">
-        <li><a href="">horestco.com.my</a></li>
+        <li><a href="">horestco.com</a></li>
       </ul>
 
     </div>

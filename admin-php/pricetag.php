@@ -183,7 +183,7 @@ include 'partials/nav.php';
 						<img data-image="{{ product.images.id }}" src="<?=base_url()?>assets/images/furniture/{{ product.images.name }}" class="img-responsive">
 					</div>
 					<div class="tag-footer text-center">
-						For more info : www.horestco.com.my
+						For more info : www.horestco.com
 					</div>
 				</li>
 			</ul>

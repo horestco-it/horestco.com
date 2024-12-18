@@ -9,7 +9,7 @@
   <meta name="google-site-verification" content="9c_m7u6MVhGHrVGcGKY7AhtI3d1xM6Eq6h3wAHd1M14" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <link href="https://www.horestco.com.my" rel=""canonical�">
+  <link href="https://www.horestco.com" rel=""canonical�">
   <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
   
 	<link rel="icon" href="<?=base_url().img_url()?>favicon.ico">

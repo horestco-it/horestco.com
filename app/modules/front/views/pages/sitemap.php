@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Sitemap horestco.com.my</title>
+	<title>Sitemap horestco.com</title>
 	<?php $this->load->view('partials/meta-and-assets') ?>
 
 </head>

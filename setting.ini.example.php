@@ -7,4 +7,4 @@ database = horestco_my
 
 env = development
 url = 'http://localhost:8000'
-server_url = 'https://horestco.com.my/'
+server_url = 'https://horestco.com/'

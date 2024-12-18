@@ -1,6 +1,6 @@
 {
-	"name": "horestco/horestco.com.my",
-	"description": "horestco.com.my application",
+	"name": "horestco/horestco.com",
+	"description": "horestco.com application",
 	 "autoload": {
         "classmap": [
            "app/models"

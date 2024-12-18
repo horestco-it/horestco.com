@@ -122,7 +122,7 @@
         <div class="collapsible-header">
           <i class="material-icons add">add</i>
           <i class="material-icons remove">remove</i>
-          Order online through <a href="https://horestco.com.my">www.horestco.com.my</a> or other related horestco owned platforms, does the customer have to pay delivery charges?
+          Order online through <a href="https://horestco.com">www.horestco.com</a> or other related horestco owned platforms, does the customer have to pay delivery charges?
         </div>
         <div class="collapsible-body">
           <p>
@@ -590,7 +590,7 @@
         </div>
         <div class="collapsible-body">
           <p>
-          Our website displays retail selling price. Dealers are recommended to follow the same price as minimum selling price.. For more info refer to www.horestco.com.my
+          Our website displays retail selling price. Dealers are recommended to follow the same price as minimum selling price.. For more info refer to www.horestco.com
           </p>
         </div>
       </li>
@@ -602,7 +602,7 @@
         </div>
         <div class="collapsible-body">
           <p>
-          We keep stocks for fast moving items. Please refer to <a href="http://www.horestco.com.my">www.horestco.com.my</a> for stock availability or contact us prior to ordering.
+          We keep stocks for fast moving items. Please refer to <a href="http://www.horestco.com">www.horestco.com</a> for stock availability or contact us prior to ordering.
           </p>
         </div>
       </li>

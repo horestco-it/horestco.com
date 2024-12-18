@@ -30,7 +30,7 @@
       <div class="col s12 center white-text">
         <h3 class="lead-heading">CATALOG DOWNLOADS</h3>
         <h5 class="lead-sub-heading">
-          Discover a wide range of the products that you can find at <span class="tonjol">horestco.com.my</span> and in our showroom.
+          Discover a wide range of the products that you can find at <span class="tonjol">horestco.com</span> and in our showroom.
           Clearly structured, includes all the necessary basic information
         </h5>
         <div class="lead-btn-wrapper">

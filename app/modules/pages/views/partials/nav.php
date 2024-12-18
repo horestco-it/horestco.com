@@ -153,7 +153,7 @@
 
       <!-- show in print view -->
       <ul class="right hide http">
-        <li><a href="">horestco.com.my</a></li>
+        <li><a href="">horestco.com</a></li>
       </ul>
 
       <a href="" data-activates="mobile-menu" class="button-collapse mobile-menu hide-on-print"><i class="mdi-action-view-headline"></i></a>

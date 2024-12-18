@@ -117,7 +117,7 @@ $ids = json_decode($ids);
 									<img class="img-responsive" src="<?=base_url('assets/images/furniture/'.$product->images[0]['name'])?>" alt="">
 								</div>
 								<div class="tag-footer">
-									www.horestco.com.my
+									www.horestco.com
 								</div>
 							</td>
 						<?php endforeach ?>

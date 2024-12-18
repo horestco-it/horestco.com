@@ -165,9 +165,9 @@ class Mailer
 
 		$content  .= '<tr valing="top" style="padding:10px">';
 
-		$content 	.= '<a href="http://www.horestco.com.my">';
+		$content 	.= '<a href="http://www.horestco.com">';
 
-		$content 	.= '<img src="http://www.horestco.com.my/assets/images/horestco-logo.png" alt="horestco.com.my">';
+		$content 	.= '<img src="http://www.horestco.com/assets/images/horestco-logo.png" alt="horestco.com">';
 
 		$content 	.= '</a></tr>';
 

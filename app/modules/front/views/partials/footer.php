@@ -39,7 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div class="footer-copyright">
     <div class="container">
-    © <?=date('Y')?> horestco.com.my
+    © <?=date('Y')?> horestco.com
     </div>
   </div>
 

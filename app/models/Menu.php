@@ -13,4 +13,4 @@ class Menu extends Model
 
 
 /* End of file Menu.php */
-/* Location: .//C/xampp/htdocs/horestco.com.my/app/models/Menu.php */
+/* Location: .//C/xampp/htdocs/horestco.com/app/models/Menu.php */

@@ -9,7 +9,7 @@ $file = FCPATH.'sitemap.xml';
 
 // use SitemapPHP\Sitemap;
 
-// $sitemap = new Sitemap('http://horestco.com.my');   
+// $sitemap = new Sitemap('http://horestco.com');   
 // $sitemap->setPath(FCPATH);
 // $sitemap->addItem('/', '1.0', 'daily', 'Today');
 // $sitemap->addItem('/about', '0.8', 'monthly', 'Jun 25');

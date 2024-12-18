@@ -4,7 +4,7 @@
 </style>
 
 <?php
-function imgPlaceholder($text = 'horestco.com.my'){
+function imgPlaceholder($text = 'horestco.com'){
   return 'https://via.placeholder.com/300x225?text='.$text;
 }
 
@@ -177,7 +177,7 @@ function getImageMenu($menu){
 
       <!-- show in print view -->
       <ul class="right hide http">
-        <li><a href="">horestco.com.my</a></li>
+        <li><a href="">horestco.com</a></li>
       </ul>
 
     </div>

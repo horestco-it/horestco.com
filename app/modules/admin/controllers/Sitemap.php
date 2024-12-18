@@ -40,7 +40,7 @@ class Sitemap extends Base {
 		    $sitemap = new SitemapService(FCPATH.'sitemaps/', $draft);
 		    // generate static page
 		    foreach ($this->pages() as $key => $page) {
-					$domain = 'http://horestco.com.my/';
+					$domain = 'http://horestco.com/';
 					if ($key == 0) {
 						$priority = '1.0';
 					}
@@ -56,7 +56,7 @@ class Sitemap extends Base {
 		    }
 		    // generate catalog products
 		    foreach ($this->getProducts() as $key => $product) {
-					$domain = 'http://horestco.com.my/furniture/';
+					$domain = 'http://horestco.com/furniture/';
 		    	$priority = '0.8';
 			    $item = new UrlItem($domain.Str::slug($product->name.'-'.$product->id));
 			    $item->setPriority($priority); //Optional
@@ -66,7 +66,7 @@ class Sitemap extends Base {
 		    }
 		    // generate catalog products
 		    foreach (PortoClient::enabled()->get() as $key => $client) {
-					$domain = 'http://horestco.com.my/client/';
+					$domain = 'http://horestco.com/client/';
 		    	$priority = '0.8';
 			    $item = new UrlItem($domain.$client->slug);
 			    $item->setPriority($priority); //Optional

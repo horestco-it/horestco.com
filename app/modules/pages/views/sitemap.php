@@ -1,6 +1,6 @@
 <?php $this->load->view('template/default/header') ?>
 
-<title>Sitemap horestco.com.my</title>
+<title>Sitemap horestco.com</title>
 
 <?php $this->load->view('template/default/nav') ?>
 

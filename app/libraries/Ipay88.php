@@ -14,9 +14,9 @@ class Ipay88
 
 	public $action = 'https://www.mobile88.com/ePayment/entry.asp';
 
-	protected $responseUrl = 'http://horestco.com.my/payment/response';
+	protected $responseUrl = 'http://horestco.com/payment/response';
 
-	protected $backendUrl = 'http://horestco.com.my/payment/response/backend';
+	protected $backendUrl = 'http://horestco.com/payment/response/backend';
 
 	protected $requests = [];
 

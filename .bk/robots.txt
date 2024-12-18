@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap:https://v22.horestco.com.my/sitemap.xml
-Sitemap:https://v22.horestco.com.my/sitemap_1.xml
+Sitemap:https://v22.horestco.com/sitemap.xml
+Sitemap:https://v22.horestco.com/sitemap_1.xml
