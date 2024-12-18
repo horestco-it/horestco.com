@@ -34,7 +34,7 @@
           Clearly structured, includes all the necessary basic information
         </h5>
         <div class="lead-btn-wrapper">
-          <a href="<?=base_url('files/horestco-catalog_2016.pdf')?>" download class="btn btn-large waves-effect waves-light green lighter-3">
+          <a href="<?=base_url('files/horestco-catalog_2025.pdf')?>" download class="btn btn-large waves-effect waves-light green lighter-3">
             <i class="mdi-action-get-app right"></i>  DOWNLOAD</a>
         </div>
         <h5 class="lead-sub-heading">
