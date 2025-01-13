@@ -55,8 +55,10 @@ if ( isset($_GET['action']) && $_GET['action'] == 'deleteclient' ) {
 	$db->bind('clientid', $_GET['id']);
 	$deleteclient = $db->row(" DELETE FROM porto_clients WHERE id = :clientid ");
 	// if ( $deleteclient ) {
+	$db = new DB();
 	$db->bind('clientid', $_GET['id']);
 	$deleteimage = $db->query(" DELETE FROM portoimage WHERE clientid = :clientid ");
+	$db = new DB();
 	$db->bind('clientid', $_GET['id']);
 	$deletetooltip = $db->query(" DELETE FROM portotooltip WHERE clientid = :clientid ");
 
@@ -73,7 +75,8 @@ if ( isset($_GET['action']) && $_GET['action'] == 'deleteimage' ) {
 	// $client = $db->row(" SELECT * FROM porto_clients WHERE id = :clientId ");
 	// $db->bind('pageId', $client['page_id']);
 	// $page = $db->row(" SELECT * FROM pages WHERE id = :pageId ");
-
+	
+	$db = new DB();
 	$db->bind('id', $_GET['id']);
 	$deleteimage = $db->row(" DELETE FROM porto_images WHERE id = :id ");
 	
@@ -86,6 +89,7 @@ if ( isset($_GET['action']) && $_GET['action'] == 'setprimary' ) {
 	$db = new DB();
 	$db->bind('clientid', $_GET['clientid']);
 	$reset = $db->query(" UPDATE porto_images SET is_primary = 0 WHERE porto_client_id=:clientid ");
+	$db = new DB();
 	$db->bind('imageid', $_GET['imageid']);
 	$setprimary = $db->query(" UPDATE porto_images SET is_primary = 1 WHERE id=:imageid ");
 	if ( count($reset) > 0 && count($setprimary) > 0 ) {
