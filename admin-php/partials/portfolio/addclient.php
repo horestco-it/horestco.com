@@ -93,43 +93,45 @@ if ( isset($_GET['upload']) && $_GET['upload'] ) {
 		$db = new DB();
 		$db->bind('clientid', $_GET['clientid']);
 		$client = $db->row(" SELECT * FROM porto_clients WHERE id = :clientid ");
+		
+		$db = new DB();
 		$db->bind('pageId', $client['page_id']);
 		$page = $db->row(" SELECT * FROM pages WHERE id = :pageId ");
 		
 		$path = base_path()."assets/images/portfolio/".Str::slug($page['name'])."/";
-
 		$img_allowed = array('png', 'jpg', 'gif','zip');
 		
-    // upload images
+    	// upload images
 		foreach ($_FILES['images']['name'] as $f => $name) {
-	    $ext = strtolower('.'.pathinfo($name, PATHINFO_EXTENSION));
+			$ext = strtolower('.'.pathinfo($name, PATHINFO_EXTENSION));
 
-	    $imageCrumbs = array(
-	    	Str::slug($client['name']),
-	    	Str::slug($page['name']),
-	    	rand(100, 999)
-	    );
+			$imageCrumbs = array(
+				Str::slug($client['name']),
+				Str::slug($page['name']),
+				rand(100, 999)
+			);
 
-	    $image_name = implode('-', $imageCrumbs).$ext;
+			$image_name = implode('-', $imageCrumbs).$ext;
 
-	    if(!in_array(str_replace('.', '',$ext), $img_allowed)){
-	        echo '{"status":"error"}';
-	        exit;
-	    }
-	    if ( copy($_FILES['images']['tmp_name'][$f], $path.$image_name) ){
-	        include_once '../../../classes/simpleImage.class.php';
-          // create instant object from class
-          $image = new SimpleImage();
-          $image->load($path.$image_name);
+			if(!in_array(str_replace('.', '',$ext), $img_allowed)){
+				echo '{"status":"error"}';
+				exit;
+			}
+			if ( copy($_FILES['images']['tmp_name'][$f], $path.$image_name) ){
+				include_once '../../../classes/simpleImage.class.php';
+			// create instant object from class
+				$image = new SimpleImage();
+				$image->load($path.$image_name);
 
-	        $db->bind('clientid', $_GET['clientid']);
-	        $db->bind('name', $image_name);
-	        $db->bind('created_at', timestamps());
-	        $db->query(" INSERT INTO porto_images(porto_client_id, name, created_at) VALUES(:clientid, :name, :created_at) ");
-	        
-	        header("location:../../portfolio.php");
-	    }
+				$db = new DB();
+				$db->bind('clientid', $_GET['clientid']);
+				$db->bind('name', $image_name);
+				$db->bind('created_at', timestamps());
+				$db->query(" INSERT INTO porto_images(porto_client_id, name, created_at) VALUES(:clientid, :name, :created_at) ");
+				
+				header("location:../../portfolio.php");
+			}
 
-	  } // end foreach
-}
+	  	} // end foreach
+	}
  ?>
