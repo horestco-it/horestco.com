@@ -55,6 +55,21 @@ if (! function_exists('image_thumb'))
 {
 	function image_thumb($path, $width, $options = array())
 	{
+		if (strpos($path, 'http://') === 0 || strpos($path, 'https://') === 0) {
+			$default = array(
+				'data-src' => $path,
+				'data-lazy' => false,
+				'alt' => 'Horestco Furniture'
+			);
+			$options = array_merge($default, $options);
+			$options['src'] = $path;
+			$attr = '';
+			foreach ($options as $key => $opt) {
+				if ($key === 'data-lazy' && is_bool($opt)) continue;
+				$attr .= " $key=\"$opt\" ";
+			}
+			return '<img '.$attr.'/>';
+		}
     if( !file_exists(FCPATH.$path) )
     {
       return '<img src="'.base_url().img_url('not-available.jpg').'" >';

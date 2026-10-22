@@ -36,14 +36,14 @@ $route['malaysia-furniture-promotions'] = "pages/promotion/index";
 //////////
 // cart //
 //////////
-$route['cart'] = "cart/cart";
+// $route['cart'] = "cart/cart";
 // beta
-$route['cart/beta'] = "cart/indexBeta";
+// $route['cart/beta'] = "cart/indexBeta";
 
 /////////////
 // payment //
 /////////////
-$route['payment/response/backend'] = "payment/responseBackend";
+// $route['payment/response/backend'] = "payment/responseBackend";
 
 /////////////
 // sitemap //

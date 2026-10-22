@@ -19,19 +19,17 @@ class HRC_Controller extends MX_Controller
 		parent::__construct();
 
 		$this->load->helper('product');
-
 		$this->load->helper('image_helper');
+		$this->load->library('wcstore');
 
 		$this->currency = 'MYR';
-
 		$this->data['currency'] = 'MYR';
+
 		// store categories
 		$this->data['categories'] = $this->getCategories();
-
 		$this->data['menus'] = $this->mainMenu();
 
-		$this->data['redirectToShop'] = base_url('furniture/area/dining');
-
+		$this->data['redirectToShop'] = base_url('furniture');
 		$this->data['version'] = '';
 		$this->data['page'] = $this->uri->uri_string();
 	}
@@ -72,20 +70,66 @@ class HRC_Controller extends MX_Controller
 
 	protected function metaData()
 	{
-		$page = Page::slug('/')
-									->en()
-									->with(array(
-										'metas'
-									))
-									->first();
-		return $page->metas;
+		try {
+			if (class_exists('Page') && isset($this->db) && $this->db->table_exists('pages')) {
+				$page = Page::slug('/')->en()->with(['metas'])->first();
+				if ($page) return $page->metas;
+			}
+		} catch (\Exception $e) {}
+		return [];
 	}
 
 	protected function mainMenu()
 	{
-		return Menu::with(array('submenus' => function($q){
-			$q->where('is_active', 1)->orderBy('sort_order', 'asc')->orderBy('id', 'asc');
-		}))->where('is_active', 1)->orderBy('sort_order', 'asc')->get();
+		try {
+			if (class_exists('Menu') && isset($this->db) && $this->db->table_exists('menus')) {
+				return Menu::with(array('submenus' => function($q){
+					$q->where('is_active', 1)->orderBy('sort_order', 'asc')->orderBy('id', 'asc');
+				}))->where('is_active', 1)->orderBy('sort_order', 'asc')->get();
+			}
+		} catch (\Exception $e) {}
+
+		return $this->buildFallbackMenu();
+	}
+
+	protected function buildFallbackMenu()
+	{
+		return [
+			(object)[
+				'name' => 'Dining',
+				'url' => 'furniture/area/dining',
+				'submenus' => [
+					(object)['name' => 'Dining Chairs', 'url' => base_url('furniture/dining/dining-chairs'), 'image' => 'assets/images/furniture/dining-chair.jpg'],
+					(object)['name' => 'Dining Tables', 'url' => base_url('furniture/dining/dining-tables-malaysia-wood-marble-restaurant-tables'), 'image' => 'assets/images/furniture/dining-table.jpg'],
+					(object)['name' => 'Bar Chairs & Stools', 'url' => base_url('furniture/dining/bar-chairs'), 'image' => 'assets/images/furniture/bar-chair.jpg'],
+					(object)['name' => 'Bar Tables', 'url' => base_url('furniture/dining/bar-tables-dining'), 'image' => 'assets/images/furniture/bar-table.jpg'],
+				]
+			],
+			(object)[
+				'name' => 'Living',
+				'url' => 'furniture/area/living',
+				'submenus' => [
+					(object)['name' => 'Coffee & Side Tables', 'url' => base_url('furniture/living/coffee-side-tables'), 'image' => 'assets/images/furniture/coffee-table.jpg'],
+					(object)['name' => 'Lounge Chairs', 'url' => base_url('furniture/living/lounge-chairs'), 'image' => 'assets/images/furniture/lounge-chair.jpg'],
+				]
+			],
+			(object)[
+				'name' => 'Bedroom',
+				'url' => 'furniture/area/bedroom',
+				'submenus' => [
+					(object)['name' => 'Beds', 'url' => base_url('furniture/bedroom/bedroom'), 'image' => 'assets/images/furniture/bed.jpg'],
+					(object)['name' => 'Bedside Tables', 'url' => base_url('furniture/bedroom/bedside-tables'), 'image' => 'assets/images/furniture/bedside-table.jpg'],
+				]
+			],
+			(object)[
+				'name' => 'Office & Bath',
+				'url' => 'furniture/area/home-office',
+				'submenus' => [
+					(object)['name' => 'Home Office', 'url' => base_url('furniture/home-office/home-office'), 'image' => 'assets/images/furniture/office.jpg'],
+					(object)['name' => 'Bathroom Furniture', 'url' => base_url('furniture/bathroom/bathroom'), 'image' => 'assets/images/furniture/bathroom.jpg'],
+				]
+			]
+		];
 	}
 
 	/*
@@ -164,9 +208,15 @@ class HRC_Controller extends MX_Controller
 
 	protected function getCategories($req = null)
 	{
-		$categories = \Category::enabled()->get();
+		try {
+			if (class_exists('Category') && isset($this->db) && $this->db->table_exists('categories')) {
+				$categories = \Category::enabled()->get();
+				return $req == 'json' ? print_r($categories->toJson) : $categories;
+			}
+		} catch (\Exception $e) {}
 
-		return $req == 'json' ? print_r($categories->toJson) : $categories;
+		$categories = isset($this->wcstore) ? $this->wcstore->getCategories() : [];
+		return $req == 'json' ? json_encode($categories) : $categories;
 	}
 
 	protected function relations($relations)

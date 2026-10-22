@@ -218,6 +218,9 @@ if ( !function_exists('product_img_url') )
 {
 	function product_img_url($file = '')
 	{
+		if (strpos($file, 'http://') === 0 || strpos($file, 'https://') === 0) {
+			return $file;
+		}
 		return 'assets/images/furniture/'. $file;
 	}
 }

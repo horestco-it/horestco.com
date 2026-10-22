@@ -339,5 +339,5 @@
 
 <?php $this->load->view( config_item('theme').'script' ) ?>
 <?php $this->load->view('partials/product-detail.js.php') ?>
-<?php $this->load->view('partials/product-detail-cart.js.php') ?>
+<?php // $this->load->view('partials/product-detail-cart.js.php') ?>
 <?php $this->load->view( config_item('theme').'footer' ) ?>

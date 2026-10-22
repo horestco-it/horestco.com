@@ -1,10 +1,15 @@
 ;<?php return; ?>
 [SQL]
 host = localhost
-username = root
-password = '123456'
-database = horestco_my
+username = pjhccudwhr
+password = ''
+database = pjhccudwhr
 
-env = development
-url = 'http://localhost:8000'
+env = production
+url = 'https://horestco.com'
 server_url = 'https://horestco.com/'
+
+[WC]
+api_url = 'https://horestco.com.my/wp-json/wc/store/v1/'
+whatsapp_number = '60162240799'
+contact_email = 'it@horestco.com'

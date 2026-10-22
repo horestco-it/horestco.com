@@ -1,153 +1,49 @@
 <?php
-
 use Illuminate\Support\Str;
 
-	function is_active_material($allMaterial, $hasManyMaterial){
-		foreach($allMaterial as $category){
-			if( in_array($category->id, $hasManyMaterial) )
-			{
-				return $category->id;
-			}
-		}
-		return false;
-	}
- ?>
+$product_title = isset($product->name) ? $product->name : '';
+$product_code = isset($product->code) ? $product->code : (isset($product->sku) ? $product->sku : '');
+$wa_message = "Hi Horestco, I would like to inquire about: " . $product_title;
+if (!empty($product_code)) {
+    $wa_message .= " (Code: " . $product_code . ")";
+}
+$wa_url = "https://wa.me/60162240799?text=" . rawurlencode($wa_message);
+$quote_url = base_url("contact-furniture-manufacturer?product=" . rawurlencode($product_title) . "&code=" . rawurlencode($product_code));
+?>
 <div class="row">
-	<div class="col s12 grey lighten-3 grey-text">
-		<div class="section add-to-cart" style="z-index:10">
+	<div class="col s12 grey lighten-4 grey-text text-darken-3 z-depth-1" style="padding: 20px 15px; border-radius: 4px; border: 1px solid #e0e0e0;">
+		
+		<h6 style="font-weight: 600; text-transform: uppercase; margin-top: 0; color: #333; border-bottom: 2px solid #009688; padding-bottom: 8px;">
+			<i class="fa fa-info-circle teal-text left"></i> Product Inquiry
+		</h6>
 
-			<form class="add-cart">
+		<p style="font-size: 0.9rem; line-height: 1.4; color: #666; margin: 12px 0;">
+			Interested in <strong><?=htmlspecialchars($product_title)?></strong> for your hotel, resort, restaurant, or commercial project?
+		</p>
 
-				<?php if ($product->sizes->count() > 0): ?>
-				<div class="size">
-					<label for="search-size" class="orange-text">Size:</label>
-					<select class="browser-default" v-model="size" name="product[size]" id="search-size">
-						<?php foreach ($product->sizes as $key => $size): ?>
-						<option value="<?=$size->id?>" <?= $key == 0 ?'selected' : '' ?>>
-							<?=strtoupper($size->name)?>
-						</option>
-						<?php endforeach ?>
-					</select>
-				</div>
-				<?php endif ?>
-
-				<div class="section qty">
-					<label for="qty" class="orange-text">Quantity:</label>
-					<input type="number" min="1" class="form-control center" name="product[qty]" value="1">
-				</div>
-				
-				<?php foreach ($Material['required'] as $key => $category): ?>
-					<?php if (in_array($category->id, $materials['category_id'])): ?>
-						
-					<div class="section select-material <?=Str::slug($category->name)?>">
-						<label class="orange-text"><?=ucwords($category->name)?>:</label>
-						<?php $this->load->view('product-detail-material', 
-							[
-								'category' => $category,
-								'product' => $product,
-								'subcategories' => $category->subcategories,
-								'materials' => $materials
-							])?>
-					</div>
-					<?php endif ?>
-				<?php endforeach ?>
-				
-				<div class="divider"></div>
-
-				<?php 
-				$id_sub_cat=$product['subcategory_id'];
-					if ( 
-							is_active_material($Material['optional'], $materials['category_id'])
-						// && $product->prices->sunbrella != 0.00 
-						// && $product->prices->sunproof != 0.00
-					): 
-					
-					if($id_sub_cat==70){
-					
-					?>
-					
-					<div class="section select-material optional-material">
-		      	<input type="checkbox" class="filled-in" id="add-fabric-checkbox" />
-		      	<label for="add-fabric-checkbox">Add Canopy</label>
-		      	<br>
-							<div class="select-fabric-box">
-								<label class="orange-text">Canopy Fabric:</label>
-						<?php foreach ($Material['optional'] as $key => $category): ?>
-								<?php $this->load->view('product-detail-material', 
-								[
-									'category' => $category,
-									'subcategories' => $category->subcategories,
-									'product' => $product,
-									'materials' => $materials
-								])?>
-					
-							</div>
-					</div>
-					<?php endforeach ?>
-					
-					<?php 
-					}else{
-					?>
-					<div class="section select-material optional-material">
-		      	<input type="checkbox" class="filled-in" id="add-fabric-checkbox" />
-		      	<label for="add-fabric-checkbox">Add Cushion</label>
-		      	<br>
-							<div class="select-fabric-box">
-								<label class="orange-text">Cushion Fabric:</label>
-						<?php foreach ($Material['optional'] as $key => $category): ?>
-								<?php $this->load->view('product-detail-material', 
-								[
-									'category' => $category,
-									'subcategories' => $category->subcategories,
-									'product' => $product,
-									'materials' => $materials
-								])?>
-						
-							</div>
-					</div>
-					<?php endforeach ?>
-					<?php 
-					
-					}
-					?>
-					
-					
-				<?php endif ?>
-
-				<div class="section button" style="margin-bottom: 1rem">
-			    <input type="hidden" readonly="1" id="" name="product[id]" value="<?=$product->id?>">
-			    <input type="hidden" readonly="1" id="" name="product[name]" value="<?=$product->name?>">
-			    
-			    <?php if ($categoryId = is_active_material($Material['required'], $materials['category_id'])): ?>
-			    <?php endif ?>
-
-			    <?php foreach ($Material['required'] as $key => $category): ?>
-						<?php if (in_array($category->id, $materials['category_id'])): ?>
-							
-			    	<input type="hidden" readonly="1" id="category-<?=$category->id?>" name="materials[required][<?=$category->id?>]" value="" placeholder="<?=$category->name?>">
-
-						<?php endif ?>
-					<?php endforeach ?>
-
-			    <?php if ($categoryId = is_active_material($Material['optional'], $materials['category_id'])): ?>
-			    	<input type="hidden" readonly="1" id="category-<?=$categoryId?>" class="optional-category-field" name="materials[optional][<?=$categoryId?>]" value="" placeholder="<?=$category->name?>">
-			    <?php endif ?>
-			    
-			    <input type="hidden" readonly="1" id="isAddOptional" name="isAddOptional" value="false">
-	        <!--<button class="btn teal" type="submit" style="width:100%">-->
-		      	<!--<i class="mdi-action-shop left"></i>-->
-		      	<!--<span class="text-cart">Add To Cart</span> -->
-	        <!--</button>-->
-
-	        <div class="progress" style="opacity: 0">
-			      <div class="indeterminate"></div>
-			  	</div>
-
-				</div>
-			</form>
-
+		<!-- WhatsApp Direct Button -->
+		<div style="margin-bottom: 12px;">
+			<a href="<?=$wa_url?>" target="_blank" rel="noopener noreferrer" class="btn waves-effect waves-light green darken-1" style="width: 100%; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: none; font-size: 0.95rem;">
+				<i class="fa fa-whatsapp fa-lg"></i> Inquire on WhatsApp
+			</a>
 		</div>
+
+		<!-- Request Quote Button -->
+		<div style="margin-bottom: 15px;">
+			<a href="<?=$quote_url?>" class="btn waves-effect waves-light teal darken-2" style="width: 100%; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 8px; text-transform: none; font-size: 0.95rem;">
+				<i class="fa fa-envelope-o"></i> Request a Quote
+			</a>
+		</div>
+
+		<div class="divider" style="margin: 15px 0;"></div>
+
+		<!-- Highlights -->
+		<ul style="font-size: 0.85rem; color: #555; line-height: 1.6; margin: 0; padding-left: 10px;">
+			<li><i class="fa fa-check teal-text"></i> Custom sizes & finishes available</li>
+			<li><i class="fa fa-check teal-text"></i> Commercial grade craftsmanship</li>
+			<li><i class="fa fa-check teal-text"></i> Worldwide delivery & export support</li>
+			<li><i class="fa fa-check teal-text"></i> Bulk & project pricing upon request</li>
+		</ul>
+
 	</div>
 </div>
-
-  

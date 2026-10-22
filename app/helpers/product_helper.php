@@ -7,74 +7,47 @@ if(! function_exists('product_thumbnail'))
 	function product_thumbnail($products)
 	{
 		$html = '';
-		$currency = 'MYR';
 
-		if($products->count() == 0)
+		if (empty($products))
 		{
 			return $html;
 		}
 
-		$ci =& get_instance();
+		$chunks = is_array($products) ? array_chunk($products, 4) : $products->chunk(4);
 
+		$ci =& get_instance();
 		$ci->load->helper('image_helper');
-		foreach ($products->chunk(4) as $chunk):
+
+		foreach ($chunks as $chunk):
 			$html .= "<div class=\"row\">";
 				foreach ($chunk as $key => $product):
+					$product = is_array($product) ? (object)$product : $product;
+					$subName = isset($product->subcategory['name']) ? $product->subcategory['name'] : (isset($product->category['name']) ? $product->category['name'] : 'Furniture');
+					$thumbImg = isset($product->imageThumb['name']) ? $product->imageThumb['name'] : (isset($product->images[0]->src) ? $product->images[0]->src : (isset($product->images[0]['src']) ? $product->images[0]['src'] : ''));
 
 					$options = array(
-						'alt' => 'Teak Furniture Malaysia '.strtolower($product->subcategory['name'].' '. $product->name),
-						'title' => ucwords($product->subcategory['name'].' - '.$product->name),
-						'class'=> 'white-text post-image',
-						'data-original'=> isset($product->imageThumb['name']) ? $product->imageThumb['name'] : null,
+						'alt' => 'Horestco ' . strtolower($subName . ' ' . $product->name),
+						'title' => ucwords($subName . ' - ' . $product->name),
+						'class' => 'white-text post-image responsive-img',
+						'data-original' => $thumbImg,
 					);
 
-					$label  = "<span class=\"grey-text hide-on-small-only\">";
-					$label .= "	<i class=\"fa fa-tags grey-text text-darken-1 left hide-on-print gap gap-5\"></i> ";
-					$label .= "</span>";
-					//$label .= "<span class=\"gap gap-5 hide-on-small-only hide-on-print\"></span>";
-					
-				// 	$price = ($product->sizes && isset($product->sizes[0]) && $product->sizes[0]->prices['normal'] != '') 
-				// 				? $product->sizes[0]->prices['normal'] == 0.00 ? '' 
-				// 				: $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['normal'].'</span>'
-				// 				: ''; 
+					$slug = isset($product->slug) ? $product->slug : Str::slug($product->name);
 
-					// $price = ($product->sizes && $product->sizes[0]->prices['normal'] == '' || $product->sizes[0]->prices['normal'] == 0.00) 
-					// 			? '' 
-					// 			: $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['normal'].'</span>';
-				
 					$html .= "<div class=\"col s6 m3 item\">";
-					$html .= "<a href=\"".base_url()."furniture/".Str::slug($product->name)."-".$product->id."\">";
-					$html .= "	<div class=\"card lists\">";
-					$html .= "		<div class=\"card-image\">";
-								
-
-									foreach ($product->images as $i => $image) {
-										if( $i == 0 )
-										{
-											$options['data-lazy'] = false;
-											$options['class'] = 'white-text post-image';
-					$html .=		image_thumb(product_img_url($product->imageThumb['name']), 300, $options);
-										}
-					// 					if( $i == 1 && count($product->images) > 1 && !(int)$image->is_primary)
-					// 					{
-					// 						$options['class'] = 'transparent-text hover-image lazy lazy-loader';
-					// 						$options['data-lazy'] = true;
-					// 						$options['data-src'] = base_url(product_img_url(strtolower($image->name)));
-					// $html .= 		image_thumb(product_img_url(strtolower($image->name)), 300, $options);
-					// 					}
-									}
-								 
+					$html .= "<a href=\"" . base_url() . "furniture/" . $slug . "-" . $product->id . "\">";
+					$html .= "	<div class=\"card lists z-depth-1\">";
+					$html .= "		<div class="card-image">";
+					$html .= 			image_thumb(product_img_url($thumbImg), 300, $options);
 					$html .= 		"</div>";
-					$html .= 			"<div class=\"card-content\" style=\"padding:10px\">";
-					$html .= 				"<h5 class=\"card-title\">".strtoupper($product->name)."</h5>";
-					$html .= 				"<ul>";
-					$html .= 					"<li>";
-				// 	$html .= $price;
-					// $html .=							$product->sizes[0]->prices['promo'] == '' || $product->sizes[0]->prices['promo'] == 0.00 ? $price : $label."<span class=\"price-label grey-text text-darken-2\" style=\"margin-right:5px\">".$currency." ".$product->sizes[0]->prices['promo']."</span>";
-					$html .= "				</li>";
-					$html .= "			</ul>";
-					$html .= "		</div>";
-					$html .= "	</div>";
+					$html .= 		"<div class=\"card-content\" style=\"padding:10px\">";
+					$html .= 			"<h5 class=\"card-title\" style=\"font-size: 0.95rem; font-weight: 600; line-height: 1.3;\">" . strtoupper($product->name) . "</h5>";
+					if (!empty($product->code) || !empty($product->sku)) {
+						$code = !empty($product->code) ? $product->code : $product->sku;
+						$html .= 		"<p style=\"font-size:0.8rem; color:#888; margin-top:4px;\">CODE: " . htmlspecialchars($code) . "</p>";
+					}
+					$html .= 		"</div>";
+					$html .= 	"</div>";
 					$html .= "</a>";
 					$html .= "</div>";
 
@@ -84,84 +57,57 @@ if(! function_exists('product_thumbnail'))
 		echo $html;
 	}
 }
+
 /**
  * product_lists
- *
- * Function description
- *
- * @access	public
- * @param data	type	object 
- * @return	mix
  */
 if (! function_exists('product_lists'))
 {
 	function product_lists($data = null, $subid = null)
 	{
-		if(is_null($data))
+		if(empty($data))
 		{
-			echo "null";
+			return;
 		}
 
 		$ci =& get_instance();
-
 		$ci->load->helper('image_helper');
 
 		$html = '';
 
-		$currency = 'USD';
-
-
 		foreach ($data as $key => $product):
-			// update str image to Str::slug
-			//update_to_lower($product->imageThumb['id'], $product->imageThumb['name']);
+			$product = is_array($product) ? (object)$product : $product;
 			$grid = ($subid == 0 && $key == 0) ? 'grid-item grid-sizer' : 'grid-item';
+			$subId = isset($product->subcategory['id']) ? $product->subcategory['id'] : 0;
+			$subName = isset($product->subcategory['name']) ? $product->subcategory['name'] : 'Furniture';
+			$thumbImg = isset($product->imageThumb['name']) ? $product->imageThumb['name'] : (isset($product->images[0]->src) ? $product->images[0]->src : '');
+			$slug = isset($product->slug) ? $product->slug : Str::slug($product->name);
 
-				$html .= '<div class="col s12 m4 l3 item '.$grid.'" data-id="image-'.$product->subcategory['id'].'">';
-					$html .= '<a href="'.base_url().'furniture/'.Str::slug($product->name).'-'.$product->id.'">';
-						$html .= '<div class="card lists">';
-							$html .= '<div class="card-image">';
+			$html .= '<div class="col s12 m4 l3 item ' . $grid . '" data-id="image-' . $subId . '">';
+			$html .= '<a href="' . base_url() . 'furniture/' . $slug . '-' . $product->id . '">';
+			$html .= '<div class="card lists z-depth-1">';
+			$html .= '<div class="card-image">';
 
-								$options = array(
-									'alt' => 'Teak Furniture Malaysia '.strtolower($product->subcategory['name'].' '. $product->name),
-									'title' => ucwords($product->subcategory['name'].' - '.$product->name),
-									'class'=> 'white-text post-image',
-									'data-original'=>$product->imageThumb['name'],
-								);
-								foreach ($product->images as $i => $image) {
-									if( $i == 0 )
-									{
-										$options['data-lazy'] = false;
-										$options['class'] = 'white-text post-image';
-										// $html .= image_thumb(product_img_url(strtolower($image->name)), 300, $options);
-										$html .= image_thumb(product_img_url($product->imageThumb['name']), 300, $options);
-									}
-									if( $i == 1 && count($product->images) > 1 && !(int)$image->is_primary)
-									{
-										$options['class'] = 'transparent-text hover-image lazy lazy-loader';
-										$options['data-lazy'] = true;
-										$options['data-src'] = base_url(product_img_url(strtolower($image->name)));
-										$html .= image_thumb(product_img_url(strtolower($image->name)), 300, $options);
-									}
-								}
+			$options = array(
+				'alt' => 'Horestco ' . strtolower($subName . ' ' . $product->name),
+				'title' => ucwords($subName . ' - ' . $product->name),
+				'class' => 'white-text post-image responsive-img',
+				'data-original' => $thumbImg,
+			);
 
-							$html .= '</div>';
-							$html .= "<div class=\"card-content\" style=\"padding:10px\">";
-							$html .= '<h5 class="card-title">'.strtoupper($product->name).'</h5>';
-							$html .= '<ul>';
+			$html .= image_thumb(product_img_url($thumbImg), 300, $options);
 
-							// if(is_array($except) && in_array($product->category['id'], $except['category_id'])  ):
-
-								$label = '<span class="grey-text hide-on-small-only" style="line-height:26px"><i class="mdi-action-label small grey-text text-darken-1 left hide-on-print"></i> </span><span class="gap-5 gap hide-on-small-only hide-on-print"></span>';
-								$price = ($product->sizes[0]->prices['normal'] == '' || $product->sizes[0]->prices['normal'] == 0.00) ? '' : $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['normal'].'</span>';
-								$html .= '<li>'.$product->sizes[0]->prices['promo'] == '' || $product->sizes[0]->prices['promo'] == 0.00 ? $price : $label.'<span class="price-label grey-text text-darken-2" style="margin-right:5px">'.$currency.' '.$product->sizes[0]->prices['promo'].'</span>';
-
-								$html .= '</li>';
-							// endif;
-
-							$html .= '</ul></div>';
-						$html .= '</div>';
-					$html .= '</a>';
-				$html .= '</div>';
+			$html .= '</div>';
+			$html .= '<div class="card-content" style="padding:10px">';
+			$html .= '<h5 class="card-title" style="font-size: 0.95rem; font-weight: 600; line-height: 1.3;">' . strtoupper($product->name) . '</h5>';
+			if (!empty($product->code) || !empty($product->sku)) {
+				$code = !empty($product->code) ? $product->code : $product->sku;
+				$html .= '<p style="font-size:0.8rem; color:#888; margin-top:4px;">CODE: ' . htmlspecialchars($code) . '</p>';
+			}
+			$html .= '</div>';
+			$html .= '</div>';
+			$html .= '</a>';
+			$html .= '</div>';
 
 		endforeach;
 

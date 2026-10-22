@@ -28,55 +28,10 @@
 
       <ul class="right hide-on-med-and-down submenu">
         
-        <li class="cart bl">
-          <a href="/cart" class="submenu-button" data-activates="cart-dropdown" data-belloworigin="true">
-            <i class="fa fa-shopping-cart left <?php echo $this->session->has_userdata('cart_contents') ? 'teal-text' : 'grey-text' ?>"></i> Cart
-            <?php
-              if ($this->session->has_userdata('cart_contents')):
-                $cart = $this->session->cart_contents;
-            ?>
-            <span class="badge circle teal white-text"><?=$cart['total_items']?> </span>
-            <?php endif ?>
+                <li class="bl">
+          <a href="https://wa.me/60162240799?text=Hi%20Horestco%2C%20I%20have%20an%20inquiry" target="_blank" class="teal-text" style="font-weight:bold">
+            <i class="fa fa-whatsapp left green-text"></i> WHATSAPP US
           </a>
-
-          <ul id="cart-dropdown" class="dropdown-content z-depth-3">
-            <li class="cart-items-on-nav">
-              <ul class="carts">
-                <?php if ($this->session->has_userdata('cart_contents')): ?>
-                  <li>
-                    <div class="cart-total grey white-text">
-                      Total Amount : <span class="teal-text"><?= $this->cart->total() ?></span>
-                    </div>
-                    <div class="center" style="margin: 10px 0">
-                      <a href="/cart" class="btn z-depth-0">view shopping cart</a>
-                    </div>
-                  </li>
-                  <?php foreach ($this->cart->contents() as $key => $cart): ?>
-                  <li class="cart-item">
-                    <div class="row">
-                      <div class="col s12 m4 cart-item-image">
-                        <?=image_thumb(img_url('furniture/'.$cart['image']), 100, ['class'=>''])?>
-                      </div>
-                      <div class="col s12 m8 cart-item-detail">
-                        <div class="detail"><strong><?=$cart['name']?></strong></div>
-                        <?php if ($cart['fabric']): ?>
-                        <div class="detail">+ <?=$cart['fabric']?></div>
-                        <?php endif ?>
-                        <div class="detail"><span class="grey-text">Size</span> : <?=$cart['size']?></div>
-                        
-                        <div class="detail"><span class="grey-text">Price</span> : <?=$cart['price']?></div>
-                        <div class="detail"><span class="grey-text">Qty</span> : <?=$cart['qty']?></div>
-                        <div class="detail"><span class="grey-text">Subtotal</span> : <?=$cart['subtotal']?></div>
-                      </div>
-                    </div>
-                  </li>
-                  <?php endforeach ?>
-                <?php else: ?>
-                  <li>You have no items in your shopping cart.</li>
-                <?php endif ?>
-              </ul>
-            </li>
-          </ul>
         </li>
 
         <li class="customer bl">
@@ -154,15 +109,9 @@
         <li class=" <?php active_page($this->uri->segment(1), 'contact-furniture-manufacturer')?>">
           <a class="waves-effect waves-teal" href="/contact-furniture-manufacturer">CONTACT</a>
         </li>
-        <li class="cart">
-          <a class="waves-effect waves-teal" href="/cart">
-            <i class="mdi-action-shopping-cart left"></i> CART
-            <?php
-              if ($this->session->has_userdata('cart_contents')):
-                $cart = $this->session->cart_contents;
-            ?>
-            <span class="badge circle teal white-text"><?=$cart['total_items']?></span>
-            <?php endif ?>
+                <li>
+          <a class="waves-effect waves-teal" href="https://wa.me/60162240799?text=Hi%20Horestco%2C%20I%20have%20an%20inquiry" target="_blank">
+            <i class="fa fa-whatsapp left green-text"></i> WHATSAPP US
           </a>
         </li>
         <li class=" <?php active_page($this->uri->segment(1), 'malaysia-furniture-promotions')?>">
