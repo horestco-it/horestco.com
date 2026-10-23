@@ -298,31 +298,31 @@
 		</div><!-- end col-right -->
 
 	</div><!-- end row -->
-	<?php if ($product->relations->count() > 0): ?>
+	<?php if (!empty($product->relations) && count($product->relations) > 0): ?>
 	<div class="row" id="related-items">
 		<h5>Related Items</h5>
 		<div class="col s12">
 			<div class="row">
-				<?php foreach($product->relations as $key => $product): ?>
+				<?php foreach($product->relations as $key => $relProduct): ?>
 						<div class="col s6 m3 l2 item">
-							<a href="<?=base_url('furniture/'.Str::slug($product->name).'-'.$product->id)?>">
+							<a href="<?=base_url('furniture/'.Str::slug($relProduct->name).'-'.$relProduct->id)?>">
 								<div class="card">
-									<?php foreach($product->images as $image): ?>
-										<?php if ($image->is_primary): ?>
+									<?php foreach($relProduct->images as $image): ?>
+										<?php if (!empty($image->is_primary)): ?>
 										<div class="card-image">
 											<?php 
 											 $attr = [
-											 	'alt' => strtolower($product->name),
-											 	'title' => strtolower($product->name)
+											 	'alt' => strtolower($relProduct->name),
+											 	'title' => strtolower($relProduct->name)
 											 ];
 											 ?>
 											<?=image_thumb(product_img_url($image->name), 300, $attr)?>
-											<span class="card-title"><?=$product->name?></span>
+											<span class="card-title"><?=$relProduct->name?></span>
 										</div>
 										<?php endif ?>
 									<?php endforeach ?>
 									<div class="card-content hide show-on-print">
-										<?=$product->name?>
+										<?=$relProduct->name?>
 									</div>
 								</div>
 							</a>
