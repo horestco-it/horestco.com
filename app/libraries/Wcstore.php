@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * WcStore - WooCommerce Store API Client with file caching
  * Consumes public Store API from horestco.com.my without pricing
  */
-class WcStore
+class Wcstore
 {
     protected $api_url = 'https://horestco.com.my/wp-json/wc/store/v1/';
     protected $cache_dir;
