@@ -237,7 +237,7 @@
 					<?php 
 					    $images = $product->images;
 					    if($images && count($images) > 0):
-					        $image = $images[0]->toArray();
+					        $image = (array)$images[0];
 					   ?>
 					<div class="card-panel">
 						
@@ -275,7 +275,7 @@
 							<?php foreach ($product->images as $key => $image): ?>
 					      <div class="item" data-target="image-<?=$image->id?>">
 								<?php
-									update_to_lower($image->id, $image->name);
+									// update_to_lower($image->id, $image->name);
 									$options = ['data-original'=>base_url().product_img_url($image->name)];
 								?>
 								<?php echo image_thumb(product_img_url($image->name), 100, $options);?>
