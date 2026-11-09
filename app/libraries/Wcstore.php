@@ -61,13 +61,44 @@ class Wcstore
     }
 
     /**
+     * Category slug aliases to map legacy slugs and short URLs to WooCommerce slugs
+     */
+    protected $slug_aliases = [
+        'dining-chairs' => 'dining-chairs',
+        'indoor-dining-chairs' => 'dining-chairs',
+        'chairs' => 'dining-chairs',
+        'dining-tables' => 'dining-tables-malaysia-wood-marble-restaurant-tables',
+        'indoor-dining-tables' => 'dining-tables-malaysia-wood-marble-restaurant-tables',
+        'bar-tables' => 'bar-tables-dining',
+        'bar-chairs' => 'bar-chairs',
+        'bar-chairs-stools' => 'bar-chairs',
+        'booth-seating' => 'booth-seating-sofas',
+        'service-furniture' => 'furniture-dining-service-furniture-sideboards',
+        'sideboards' => 'furniture-dining-service-furniture-sideboards',
+        'indoor-coffee-side-tables' => 'coffee-side-tables',
+        'coffee-side-tables' => 'coffee-side-tables',
+        'sideboards-consoles-bookcases-and-bookshelves' => 'storage-living-room-storage-cabinets',
+        'storage' => 'storage-living-room-storage-cabinets',
+        'bed-frames' => 'bedroom',
+        'beds' => 'bedroom',
+        'bedside-tables' => 'bedside-tables',
+        'outdoor-dining-chairs' => 'outdoor-chairs',
+        'outdoor-chairs' => 'outdoor-chairs',
+        'outdoor-dining-tables' => 'outdoor-dining-tables',
+        'outdoor-sofa' => 'outdoor-sofa',
+    ];
+
+    /**
      * Get single category by slug
      */
     public function getCategoryBySlug($slug)
     {
+        $slug = strtolower(trim($slug));
+        $targetSlug = isset($this->slug_aliases[$slug]) ? $this->slug_aliases[$slug] : $slug;
+
         $all = $this->getCategories();
         foreach ($all as $cat) {
-            if ($cat->slug === $slug) {
+            if ($cat->slug === $targetSlug || $cat->slug === $slug) {
                 return $cat;
             }
         }
@@ -105,6 +136,8 @@ class Wcstore
         }
         $query['page'] = !empty($params['page']) ? (int)$params['page'] : 1;
         $query['per_page'] = !empty($params['per_page']) ? (int)$params['per_page'] : 24;
+        $query['orderby'] = !empty($params['orderby']) ? $params['orderby'] : 'menu_order';
+        $query['order'] = !empty($params['order']) ? $params['order'] : 'asc';
 
         $cacheKey = 'products_' . md5(serialize($query));
         $cached = $this->getCache($cacheKey);

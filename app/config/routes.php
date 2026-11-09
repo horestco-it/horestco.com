@@ -6,6 +6,11 @@ $route['default_controller'] = "pages/single";
 // DYNAMIC      //
 // Product page //
 //////////////////
+// explicit subcategory aliases
+$route['furniture/dining/dining-chairs'] = "catalog/subcategory/dining/dining-chairs";
+$route['furniture/dining/indoor-dining-chairs'] = "catalog/subcategory/dining/dining-chairs";
+$route['furniture/dining-chairs'] = "catalog/subcategory/dining/dining-chairs";
+
 // lists
 $route['furniture'] = "catalog/lists";
 // detail

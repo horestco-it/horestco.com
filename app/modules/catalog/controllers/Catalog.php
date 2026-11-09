@@ -119,7 +119,7 @@ class Catalog extends HRC_Controller {
 				'name' => ucwords(str_replace('-', ' ', $slug)),
 				'slug' => $slug
 			];
-			$products = $this->wcstore->getProducts(['search' => $slug, 'per_page' => 24]);
+			$products = $this->wcstore->getProducts(['search' => $slug, 'per_page' => 100, 'orderby' => 'menu_order', 'order' => 'asc']);
 		} else {
 			$products = $this->wcstore->getProducts(['category' => $category->id, 'per_page' => 24]);
 		}
@@ -157,12 +157,13 @@ class Catalog extends HRC_Controller {
 				'name' => ucwords(str_replace('-', ' ', $slug)),
 				'slug' => $slug
 			];
-			$products = $this->wcstore->getProducts(['search' => $slug, 'per_page' => 24]);
+			$products = $this->wcstore->getProducts(['search' => $slug, 'per_page' => 100, 'orderby' => 'menu_order', 'order' => 'asc']);
 		} else {
-			$products = $this->wcstore->getProducts(['category' => $subcategory->id, 'per_page' => 24]);
+			$products = $this->wcstore->getProducts(['category' => $subcategory->id, 'per_page' => 100, 'orderby' => 'menu_order', 'order' => 'asc']);
 		}
 
 		$subcategory->relations = [];
+		$subcategory->products = $products;
 
 		$this->data['subcategory'] = $subcategory;
 		$this->data['products'] = $products;

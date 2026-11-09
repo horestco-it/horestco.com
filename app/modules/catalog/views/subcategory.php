@@ -3,7 +3,16 @@
 <head>
 	<title><?=ucwords("horestco furniture products lists by {$subcategory->name} subcategory")?></title>
 	<meta name="keywords" content="horestco furniture products lists by <?=strtolower($subcategory->name)?> subcategory, Horestco Furniture, Malaysia and Indonesia"/>
-	<meta name="description" content="<?=strtolower(implode(', ', $subcategory->products->pluck('name')->toArray()))?>, Kuala Lumpur, Malaysia" />
+<?php
+	$descProducts = [];
+	if (!empty($products)) {
+		foreach ($products as $p) {
+			$descProducts[] = is_object($p) ? $p->name : ($p['name'] ?? '');
+		}
+	}
+	$descText = !empty($descProducts) ? implode(', ', array_slice($descProducts, 0, 10)) : (isset($subcategory->name) ? $subcategory->name : '');
+?>
+	<meta name="description" content="<?=htmlspecialchars(strtolower($descText))?>, Kuala Lumpur, Malaysia" />
 	<meta name="author" content="Horestco Sdn. Bhd. - Malaysia" />
 	<meta name="robots" content="index, follow" />
 
@@ -21,7 +30,7 @@
 
 	<?php product_thumbnail($products) ?>
 		
-	<?php if ( count($subcategory->relations) > 0 ): ?>
+	<?php if ( !empty($subcategory->relations) && count($subcategory->relations) > 0 ): ?>
 		<div class="col s12 grid-item">
 			<h5 class="card-panel item-heading grey darken-3 white-text" data-id="<?=$relation->id?>"><?=strtoupper($relation->name)?></h5>
 			<hr class="hide show-on-print">
