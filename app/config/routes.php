@@ -19,6 +19,7 @@ $route['furniture/(:any)-(:any)'] = "catalog/detail/$1/$2";
 $route['furniture/(:any)-(:any)/(:any)'] = "catalog/detail/$1/$2/$3";
 // category
 $route['furniture/area/(:any)'] = "catalog/category/$1";
+$route['furniture/(dining|outdoor|living|bedroom|home-office|bathroom|promotions)'] = "catalog/category/$1";
 // subcategory
 $route['furniture/(:any)/(:any)'] = "catalog/subcategory/$1/$2";
 

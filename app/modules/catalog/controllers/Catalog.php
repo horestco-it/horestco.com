@@ -120,18 +120,40 @@ class Catalog extends HRC_Controller {
 				'slug' => $slug
 			];
 			$products = $this->wcstore->getProducts(['search' => $slug, 'per_page' => 100, 'orderby' => 'menu_order', 'order' => 'asc']);
+			$subcategories = [
+				(object)[
+					'id' => 0,
+					'name' => $category->name,
+					'slug' => $category->slug,
+					'products' => $products
+				]
+			];
 		} else {
-			$products = $this->wcstore->getProducts(['category' => $category->id, 'per_page' => 24]);
+			$subs = $this->wcstore->getSubcategories($category->id);
+			if (!empty($subs)) {
+				$subcategories = [];
+				foreach ($subs as $sub) {
+					$subProds = $this->wcstore->getProducts(['category' => $sub->id, 'per_page' => 100, 'orderby' => 'menu_order', 'order' => 'asc']);
+					if (empty($subProds)) continue;
+					$subcategories[] = (object)[
+						'id' => $sub->id,
+						'name' => $sub->name,
+						'slug' => $sub->slug,
+						'products' => $subProds
+					];
+				}
+			} else {
+				$products = $this->wcstore->getProducts(['category' => $category->id, 'per_page' => 100, 'orderby' => 'menu_order', 'order' => 'asc']);
+				$subcategories = [
+					(object)[
+						'id' => $category->id,
+						'name' => $category->name,
+						'slug' => $category->slug,
+						'products' => $products
+					]
+				];
+			}
 		}
-
-		$subcategories = [
-			(object)[
-				'id' => $category->id,
-				'name' => $category->name,
-				'slug' => $category->slug,
-				'products' => $products
-			]
-		];
 
 		$data = array(
 			'category' => $category,

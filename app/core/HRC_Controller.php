@@ -81,14 +81,6 @@ class HRC_Controller extends MX_Controller
 
 	protected function mainMenu()
 	{
-		try {
-			if (class_exists('Menu') && isset($this->db) && $this->db->table_exists('menus')) {
-				return Menu::with(array('submenus' => function($q){
-					$q->where('is_active', 1)->orderBy('sort_order', 'asc')->orderBy('id', 'asc');
-				}))->where('is_active', 1)->orderBy('sort_order', 'asc')->get();
-			}
-		} catch (\Exception $e) {}
-
 		return $this->buildFallbackMenu();
 	}
 
@@ -98,35 +90,71 @@ class HRC_Controller extends MX_Controller
 			(object)[
 				'name' => 'Dining',
 				'url' => 'furniture/area/dining',
+				'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg',
 				'submenus' => [
-					(object)['name' => 'Dining Chairs', 'url' => base_url('furniture/dining/dining-chairs'), 'image' => 'assets/images/furniture/dining-chair.jpg'],
-					(object)['name' => 'Dining Tables', 'url' => base_url('furniture/dining/dining-tables-malaysia-wood-marble-restaurant-tables'), 'image' => 'assets/images/furniture/dining-table.jpg'],
-					(object)['name' => 'Bar Chairs & Stools', 'url' => base_url('furniture/dining/bar-chairs'), 'image' => 'assets/images/furniture/bar-chair.jpg'],
-					(object)['name' => 'Bar Tables', 'url' => base_url('furniture/dining/bar-tables-dining'), 'image' => 'assets/images/furniture/bar-table.jpg'],
+					(object)['name' => 'Dining Chairs', 'url' => base_url('furniture/dining/dining-chairs'), 'image' => 'assets/images/menus/accura-chair-562-181_300.jpg'],
+					(object)['name' => 'Dining Tables', 'url' => base_url('furniture/dining/dining-tables-malaysia-wood-marble-restaurant-tables'), 'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg'],
+					(object)['name' => 'Bar Chairs & Stools', 'url' => base_url('furniture/dining/bar-chairs'), 'image' => 'assets/images/menus/accura-chair-562-181_300.jpg'],
+					(object)['name' => 'Bar Tables', 'url' => base_url('furniture/dining/bar-tables-dining'), 'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg'],
+					(object)['name' => 'Table Bases', 'url' => base_url('furniture/dining/table-bases'), 'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg'],
+					(object)['name' => 'Table Tops', 'url' => base_url('furniture/dining/table-tops'), 'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg'],
+					(object)['name' => 'Booth Seating Sofas', 'url' => base_url('furniture/dining/booth-seating-sofas'), 'image' => 'assets/images/menus/living-furniture-koorg-sofa-872-255_300.jpg'],
+					(object)['name' => 'Restaurant Service Furniture & Sideboards', 'url' => base_url('furniture/dining/furniture-dining-service-furniture-sideboards'), 'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg'],
+				]
+			],
+			(object)[
+				'name' => 'Outdoor',
+				'url' => 'furniture/area/outdoor',
+				'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg',
+				'submenus' => [
+					(object)['name' => 'Outdoor Dining Tables', 'url' => base_url('furniture/outdoor/outdoor-dining-tables'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Outdoor Dining Chairs', 'url' => base_url('furniture/outdoor/outdoor-chairs'), 'image' => 'assets/images/menus/accura-chair-562-181_300.jpg'],
+					(object)['name' => 'Sun Loungers', 'url' => base_url('furniture/outdoor/sun-loungers'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Outdoor Sofa', 'url' => base_url('furniture/outdoor/outdoor-sofa'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Outdoor Coffee & Side Tables', 'url' => base_url('furniture/outdoor/outdoor-coffee-side-tables'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Outdoor Furniture Umbrellas', 'url' => base_url('furniture/outdoor/outdoor-furniture-umbrella'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Umbrella Stands', 'url' => base_url('furniture/outdoor/umbrella-stands'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Outdoor Benches', 'url' => base_url('furniture/outdoor/outdoor-benches'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Terrace Sets', 'url' => base_url('furniture/outdoor/terrace-sets'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Miscellaneous', 'url' => base_url('furniture/outdoor/miscellaneous-outdoor'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
+					(object)['name' => 'Outdoor Cushions & Covers', 'url' => base_url('furniture/outdoor/outdoor-cushions-covers-canopies'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
 				]
 			],
 			(object)[
 				'name' => 'Living',
 				'url' => 'furniture/area/living',
+				'image' => 'assets/images/menus/living-furniture-koorg-sofa-872-255_300.jpg',
 				'submenus' => [
-					(object)['name' => 'Coffee & Side Tables', 'url' => base_url('furniture/living/coffee-side-tables'), 'image' => 'assets/images/furniture/coffee-table.jpg'],
-					(object)['name' => 'Lounge Chairs', 'url' => base_url('furniture/living/lounge-chairs'), 'image' => 'assets/images/furniture/lounge-chair.jpg'],
+					(object)['name' => 'Sofas', 'url' => base_url('furniture/living/sofas'), 'image' => 'assets/images/menus/living-furniture-koorg-sofa-872-255_300.jpg'],
+					(object)['name' => 'TV Consoles', 'url' => base_url('furniture/living/tv-consoles'), 'image' => 'assets/images/menus/living-furniture-florence-director-chair-880-697_465.jpg'],
+					(object)['name' => 'Coffee & Side Tables', 'url' => base_url('furniture/living/coffee-side-tables'), 'image' => 'assets/images/menus/living-furniture-florence-director-chair-880-697_465.jpg'],
+					(object)['name' => 'Storage', 'url' => base_url('furniture/living/storage-living-room-storage-cabinets'), 'image' => 'assets/images/menus/living-furniture-florence-director-chair-880-697_465.jpg'],
+					(object)['name' => 'Lazy Outdoor Chairs', 'url' => base_url('furniture/outdoor/lazy-outdoor-chairs'), 'image' => 'assets/images/menus/living-furniture-florence-director-chair-880-697_465.jpg'],
 				]
 			],
 			(object)[
 				'name' => 'Bedroom',
 				'url' => 'furniture/area/bedroom',
+				'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg',
 				'submenus' => [
-					(object)['name' => 'Beds', 'url' => base_url('furniture/bedroom/bedroom'), 'image' => 'assets/images/furniture/bed.jpg'],
-					(object)['name' => 'Bedside Tables', 'url' => base_url('furniture/bedroom/bedside-tables'), 'image' => 'assets/images/furniture/bedside-table.jpg'],
+					(object)['name' => 'Bedside Tables', 'url' => base_url('furniture/bedroom/bedside-tables'), 'image' => 'assets/images/menus/outdoor-furniture-accura-day-bed-1041-911_465.jpg'],
 				]
 			],
 			(object)[
 				'name' => 'Office & Bath',
 				'url' => 'furniture/area/home-office',
+				'image' => 'assets/images/menus/living-furniture-florence-director-chair-880-697_465.jpg',
 				'submenus' => [
-					(object)['name' => 'Home Office', 'url' => base_url('furniture/home-office/home-office'), 'image' => 'assets/images/furniture/office.jpg'],
-					(object)['name' => 'Bathroom Furniture', 'url' => base_url('furniture/bathroom/bathroom'), 'image' => 'assets/images/furniture/bathroom.jpg'],
+					(object)['name' => 'Home Office', 'url' => base_url('furniture/home-office/home-office'), 'image' => 'assets/images/menus/living-furniture-florence-director-chair-880-697_465.jpg'],
+					(object)['name' => 'Bathroom Furniture', 'url' => base_url('furniture/bathroom/bathroom'), 'image' => 'assets/images/menus/dining-furniture-bahamas-dining-table-682-857.jpg'],
+				]
+			],
+			(object)[
+				'name' => 'Sale',
+				'url' => 'furniture/area/promotions',
+				'image' => 'assets/images/menus/accura-chair-562-181_300.jpg',
+				'submenus' => [
+					(object)['name' => 'Clearance Promotions', 'url' => base_url('furniture/area/promotions'), 'image' => 'assets/images/menus/accura-chair-562-181_300.jpg'],
 				]
 			]
 		];
