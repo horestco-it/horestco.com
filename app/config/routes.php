@@ -29,6 +29,16 @@ $route['furniture/(:any)/(:any)'] = "catalog/subcategory/$1/$2";
 $route['portfolio-commercial-furniture'] = "portfolio/portfolio/index";
 
 $route['portfolio'] = "portfolio/portfolio/index";
+$route['portfolio/restaurants'] = "portfolio/category/restaurant-furniture";
+$route['portfolio/restaurant-furniture'] = "portfolio/category/restaurant-furniture";
+$route['portfolio/hotels'] = "portfolio/category/hotel-furniture";
+$route['portfolio/hotel-furniture'] = "portfolio/category/hotel-furniture";
+$route['portfolio/condominiums'] = "portfolio/category/condominium-furniture";
+$route['portfolio/condominium-furniture'] = "portfolio/category/condominium-furniture";
+$route['portfolio/poolside-outdoor-furniture-for-condominiums'] = "portfolio/category/condominium-furniture";
+$route['portfolio/cruise-ships'] = "portfolio/category/cruise-ship-furniture";
+$route['portfolio/cruise-ship-furniture'] = "portfolio/category/cruise-ship-furniture";
+$route['portfolio/private-residences'] = "portfolio/category/private-residences";
 // category
 $route['portfolio/(:any)'] = "portfolio/category/$1";
 // client

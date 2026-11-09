@@ -83,9 +83,7 @@ function getImageMenu($menu){
               <div class="collapsible-body" style="display:block">
                 <ul>
                   <?php foreach ($menus as $key => $menu): ?>
-                    <?php if ($key < 4): ?>
                     <li><a class="waves-effect waves-teal" href="<?=base_url($menu->url)?>"><?=ucwords(strtolower($menu->name))?></a></li>
-                    <?php endif ?>
                   <?php endforeach ?>
                   <li><a class="waves-effect waves-teal" href="/catalog-downloads">Downloads</a></li>
                 </ul>
@@ -119,9 +117,7 @@ function getImageMenu($menu){
             <i class="fa fa-whatsapp left green-text"></i> WHATSAPP US
           </a>
         </li>
-        <li class=" <?php active_page($this->uri->segment(1), 'malaysia-furniture-promotions')?>">
-          <a class="waves-effect waves-teal" href="/malaysia-furniture-promotions">CLEARANCE</a>
-        </li>
+
       </ul>
 
       <!-- show in print view -->
